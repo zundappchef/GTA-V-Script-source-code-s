@@ -1,0 +1,4637 @@
+Function 0 2 0
+
+CallNative "NETWORK_SET_SCRIPT_IS_SAFE_FOR_NETWORK_GAME" 0 0
+Call @Main_Plate_Style_Loop_
+Return 0 0
+
+// Static 1 is for licenceplate banner
+// Static 2 is not in use
+// Static 3 is used for setting the plate background
+// Static 4 is taken and is used for setting the wheel type on the vehicle
+// Static 5 is used  for inputting the wheel type 
+
+
+:Main_Plate_Style_Loop_
+Function 0 2 0 
+PushString "~r~Loading ~w~Crazy Car Tuner V1 N ~b~ By Zundappchef "
+Call @PrintText_
+Push 1250
+CallNative "WAIT"  1 0
+
+// this wil make the zundappchef banner 
+:Plate_Banner_Loop_
+CallNative "PLAYER_PED_ID" 0 1
+push_0
+CallNative "GET_VEHICLE_PED_IS_IN" 2 1
+StaticSet2 1
+StaticGet2 1
+PushString "       Z"
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString "      ZU"
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString "     ZUN"
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString "    ZUND"
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString "   ZUNDA"
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString "  ZUNDAP"
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString " ZUNDAPP"
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString "ZUNDAPPC"
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString "UNDAPPCH"
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString "NDAPPCHE"
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString "DAPPCHEF"
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString "APPCHEF "
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString "PPCHEF  "
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString "PCHEF   "
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString "CHEF    "
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString "HEF     "
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString "EF      "
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString "F       "
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+
+// this wil loop the background of the licenceplate by a way of setting it every half a second 
+// Plates types :
+// 0 = Blue/White 
+// 1 = Yellow/black
+// 2 = Yellow/Blue
+// 3 = Blue/White2
+// 4 = Blue/White3
+// 5 = Yankton
+// in V1 i had them set in this order: 0-1-2-3-4-5
+// in V2 i set them like this : 0-1-3-4-2-5 wich should make it pop more
+:Plate_Style_Loop_
+CallNative "PLAYER_PED_ID" 0 1
+push_0
+CallNative "GET_VEHICLE_PED_IS_IN" 2 1
+StaticSet2 3
+StaticGet2 3
+Push 0
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT_INDEX" 2 0
+PushS 500
+CallNative "WAIT" 1 0 
+StaticGet2 3
+Push_1
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT_INDEX" 2 0
+PushS 500
+CallNative "WAIT" 1 0 
+StaticGet2 3
+Push_3
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT_INDEX" 2 0
+PushS 500
+CallNative "WAIT" 1 0 
+StaticGet2 3
+Push_4
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT_INDEX" 2 0
+PushS 500
+CallNative "WAIT" 1 0 
+StaticGet2 3
+Push_2
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT_INDEX" 2 0
+PushS 500
+CallNative "WAIT" 1 0 
+StaticGet2 3
+Push_5
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT_INDEX" 2 0
+PushS 500
+CallNative "WAIT" 1 0
+
+// this is my non experimental way of setting the wheels by using a static 
+// its proven to work over and over "when i want to change the speed i need to cut this section out put it into a new file then replace all the PushS 500 with another number"
+// i realy should improve on this as its not verry efective way of doing it 
+// my licenceplate background changer has this function  but i never released it because the proven way was working perfect and the code was shorter 
+
+:Wheel_Type_Feed
+Push_1
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+Push_2
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+Push_3
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+Push_4
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+Push_5
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+Push_6
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+Push_7
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 8
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 9
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 10
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 11
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 12
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 13
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 14
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 13
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 14
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 15
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 14
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 15
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 16
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 15
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 16
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 17
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 16
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 17
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 18
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 17
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 18
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 19
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 18
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 19
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 20
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 19
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 20
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 21
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 20
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 21
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 22
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 21
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 22
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 23
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 22
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 23
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 24
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 23
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 24
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 25
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 24
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 25
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 26
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 25
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 26
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 27
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 26
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 27
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 28
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 27
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 28
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 29
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 28
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 29
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 30
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 29
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 30
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 31
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 30
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 31
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 32
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 31
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 32
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 33
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 32
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 33
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 34
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 33
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 34
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 35
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 34
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 35
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 36
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 35
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 36
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 37
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 36
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 37
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 38
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 37
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 38
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 39
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 38
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 39
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 40
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 39
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 40
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 41
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 40
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 41
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 42
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 41
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 42
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 43
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 42
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 43
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 44
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 43
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 44
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 45
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 44
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 45
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 46
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 45
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 46
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 47
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 46
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 47
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 48
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 47
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 48
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 49
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 48
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 49
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 50
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 49
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 50
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 51
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 50
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 51
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 52
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 51
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 52
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 53
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 52
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 53
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 54
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 53
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 54
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 55
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 54
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 55
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 56
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 55
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 56
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 57
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 56
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 57
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 58
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 57
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 58
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 59
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 58
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 59
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 60
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 59
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 60
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 61
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 60
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 61
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 62
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 61
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 62
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 63
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 62
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 63
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 64
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 63
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 64
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 65
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 64
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 65
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 66
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 65
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 66
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 67
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 66
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 67
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 68
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 67
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 68
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 69
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 68
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 69
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 70
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 69
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 70
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 71
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 70
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 71
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 72
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 71
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 72
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 73
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 72
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 73
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 74
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 73
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 74
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 75
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 74
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 75
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 76
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 75
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 76
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 77
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 76
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 77
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 78
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 77
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 78
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 79
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 78
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 79
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 80
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 79
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 80
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 81
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 80
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 81
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 82
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 81
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 82
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 83
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 82
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 83
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 84
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 83
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 84
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 85
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 84
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 85
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 86
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 85
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 86
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 87
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 86
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 87
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 88
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 87
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 88
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 89
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 88
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 89
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 90
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 89
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 90
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 91
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 90
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 91
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 92
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 91
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 92
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 93
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 92
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 93
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 94
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 93
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 94
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 95
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 94
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 95
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 96
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 95
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 96
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 97
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 96
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 97
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 98
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 97
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 98
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 99
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 98
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 99
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 100
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 99
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 100
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 101
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 100
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 101
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 102
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 101
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 102
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 103
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 102
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 103
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 104
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 103
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 104
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 105
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 104
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 105
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 106
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 105
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 106
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 107
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 106
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 107
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 108
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 107
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 108
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 109
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 108
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 109
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 110
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 109
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 110
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 111
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 110
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 111
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 112
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 111
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 112
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 113
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 112
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 113
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 114
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 113
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 114
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 115
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 114
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 115
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 116
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 115
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 116
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 117
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 116
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 117
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 118
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 117
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 118
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 119
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 118
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 119
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 120
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 119
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 120
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 121
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 120
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 121
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 122
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 121
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 122
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 123
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 122
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 123
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 124
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 123
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 124
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 125
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 124
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 125
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 126
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 125
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 126
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 127
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 126
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 127
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 128
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 127
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 128
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 129
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 128
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 129
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 130
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 129
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 130
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 131
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 130
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 131
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 132
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 131
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 132
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 133
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 132
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 133
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 134
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 133
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 134
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 135
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 134
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 135
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 136
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 135
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 136
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 137
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 136
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 137
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 138
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 137
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 138
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 139
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 138
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 139
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 140
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 139
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 140
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 141
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 140
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 141
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 142
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 141
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 142
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 143
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 142
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 143
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 144
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 143
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 144
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 145
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 144
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 145
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 146
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 145
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 146
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 147
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 146
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 147
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 148
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 147
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 148
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 149
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 148
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 149
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 150
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 149
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 150
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 151
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 150
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 151
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 152
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 151
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 152
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 153
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 152
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 153
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 154
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 153
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 154
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 155
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 154
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 155
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 156
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 155
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 156
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 157
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 156
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 157
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 158
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 157
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 158
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 159
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 158
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 159
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 160
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 159
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 160
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 161
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 160
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 161
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 162
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 161
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 162
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 163
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 162
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 163
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 164
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 163
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 164
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 165
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 164
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 165
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 166
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 165
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 166
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 167
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 166
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 167
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 168
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 167
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 168
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 169
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 168
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 169
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 170
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 169
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 170
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 171
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 170
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 171
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 172
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 171
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 172
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 173
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 172
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 173
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 174
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 173
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 174
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 175
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 174
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 175
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 176
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 175
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 176
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 177
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 176
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 177
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 178
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 177
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 178
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 179
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 178
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 179
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 180
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 179
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 180
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 181
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 180
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 181
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 182
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 181
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 182
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 183
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 182
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 183
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 184
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 183
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 184
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 185
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 184
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 185
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 186
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 185
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 186
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 187
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 186
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 187
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 188
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 187
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 188
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 189
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 188
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 189
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 190
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 189
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 190
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 191
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 190
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 191
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 192
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 191
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 192
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 193
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 192
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 193
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 194
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 193
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 194
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 195
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 194
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 195
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 196
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 195
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 196
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 197
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 196
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 197
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 198
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 197
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 198
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 199
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 198
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 199
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 200
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 199
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 200
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 201
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 200
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 201
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 202
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 201
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 202
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 203
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 202
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 203
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 204
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 203
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 204
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 205
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 204
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 205
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 206
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 205
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 206
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 207
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 206
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 207
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 208
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 207
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 208
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 209
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 208
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 209
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 210
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 209
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 210
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 211
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 210
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 211
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 212
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 211
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 212
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 213
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 212
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 213
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 214
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 213
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 214
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 215
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 214
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 215
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 216
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 215
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 216
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 217
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 216
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 217
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 218
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 217
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 218
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 219
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 218
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 219
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 220
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 219
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 220
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 221
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 220
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 221
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 222
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 221
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 222
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 223
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 222
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 223
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 224
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 223
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 224
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 225
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 224
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 225
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 226
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 225
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 226
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 227
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 226
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 227
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 228
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 227
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 228
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 229
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 228
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 229
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 230
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 229
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 230
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 231
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 230
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 231
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 232
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 231
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 232
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 233
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 232
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 233
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 234
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 233
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 234
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 235
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 234
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 235
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 236
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 235
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 236
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 237
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 236
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 237
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 238
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 237
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 238
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 239
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 238
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 239
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 240
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 239
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 240
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 241
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 240
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 241
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 242
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 241
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 242
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 243
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 242
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 243
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 244
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 243
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 244
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 245
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 244
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 245
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 246
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 245
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 246
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 247
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 246
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 247
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 248
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 247
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 248
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 249
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 248
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 249
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 250
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 249
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 250
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 251
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 250
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 251
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 252
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 251
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 252
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 253
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 252
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 253
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 254
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 253
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 254
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 255
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 254
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 255
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 256
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 255
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 256
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 257
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 256
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 257
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 258
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 257
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 258
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 259
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 258
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 259
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 260
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 259
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 260
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 261
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 260
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 261
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 262
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 261
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 262
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 263
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 262
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 263
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 264
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 263
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 264
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 265
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 264
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 265
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 266
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 265
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 266
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 267
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 266
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 267
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 268
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 267
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 268
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 269
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 268
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 269
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 270
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 269
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 270
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 271
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 270
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 271
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 272
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 271
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 272
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 273
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 272
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 273
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 274
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 273
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 274
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 275
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 274
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 275
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 276
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 275
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 276
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 277
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 276
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 277
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 278
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 277
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 278
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 279
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 278
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 279
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 280
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 279
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 280
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 281
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 280
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 281
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 282
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 281
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 282
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 283
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 282
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 283
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 284
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 283
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 284
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 285
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 284
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 285
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 286
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 285
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 286
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 287
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 286
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 287
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 288
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 287
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 288
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 289
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 288
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 289
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 290
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 289
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 290
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 291
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 290
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 291
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 292
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 291
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 292
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 293
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 292
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 293
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 294
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 293
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 294
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 295
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 294
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 295
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 296
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 295
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 296
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 297
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 296
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 297
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 298
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 297
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 298
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 299
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 298
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 299
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 300
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 299
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 300
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 301
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 300
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 301
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+PushS 302
+StaticSet2 5
+Call @Wheel_Type_Set_
+PushS 500
+CallNative "WAIT" 1 0
+
+// this is all still in dev 
+// but it should remove all off the coding that just sets and does again
+
+//>
+// :Wheel_Type_Feed_Effective
+// Function 0 3 0 
+// push_0
+// setF1 0
+// :Wheel_Type_Loop_
+// getF1 0
+// push_300 //this wil set the amount of wheels in the game
+// JumpGT @Wheel_Type_Loop_End
+// getF1 0
+// Call @Wheel_Type_Set_
+// getF1 0
+// Add1 1
+// setF1 0
+// getF1 0
+// StaticSet2 5
+// Jump @Loop_
+// :Wheel_Type_Loop_End
+// push_0
+// CallNative "WAIT" 
+// Call @Wheel_Type_Feed_Effective
+// Return 0 0
+//<
+
+
+// this is wil set the wheel type and is feeded by static 5 
+:Wheel_Type_Set_
+CallNative "PLAYER_PED_ID" 0 1
+Push_0
+CallNative "GET_VEHICLE_PED_IS_IN" 2 1
+StaticSet2 4
+StaticGet2 4
+Push_0
+CallNative "Set_VEHICLE_MOD_KIT" 2 0
+StaticGet1 4
+Push_0
+CallNative "SET_VEHICLE_WHEEL_TYPE" 2 0
+StaticGet1 4
+Push 23
+StaticGet2 5
+Push_1
+CallNative "Set_VEHICLE_MOD" 4 0
+StaticGet1 4
+Push 24
+StaticGet2 5
+Push_1
+CallNative "Set_VEHICLE_MOD" 4 0
+ 
+// this starts the whole show over 
+:Loop_
+push_0
+CallNative "WAIT" 1 0
+Jump @Plate_Style_Loop_
+Call @Notification_1_
+// this just inputs the text for the notification that it wil give
+:Notification_1_
+PushString "~r~D~g~I~b~S~y~C~d~O"
+Call @PrintText_
+Return 0 0
+
+
+// this wil output the text into the screen 
+// its proven to work over and over and i have this since i made mountainbase v1
+:PrintText_
+Function 1 3 0
+PushString "STRING"
+CallNative "UNK_574EE85C" 1 0
+getF1 0
+CallNative "UNK_27A244D8" 1 0
+Push_0
+Push_1
+CallNative "UNK_08F7AF78" 2 1 
+Drop
+Return 1 0

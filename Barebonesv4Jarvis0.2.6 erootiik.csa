@@ -1,0 +1,2104 @@
+//> Internals
+//> Statics
+SetStaticsCount 143
+//> Menu Base
+SetStaticName 0 CurrentSubmenu //int*
+SetStaticName 1 SubmenuLevel //int
+SetStaticName 2 CurrentOption //int
+SetStaticName 3 OptionCount //int
+SetStaticName 4 LastSubmenu //int*[10]
+SetDefaultStatic LastSubmenu 10
+SetStaticName 14 LastOption //int[10]
+SetDefaultStatic LastOption 10
+SetStaticName 69 MenuSounds //bool
+SetDefaultStatic MenuSounds 1
+SetStaticName 71 MenuInfo //string
+SetStaticName 74 ScrollDelay //int
+SetDefaultStatic ScrollDelay 150
+//<
+//> Menu Drawing
+SetStaticName 24 BannerRectRed //int
+SetDefaultStatic BannerRectRed 0
+SetStaticName 25 BannerRectGreen //int
+SetDefaultStatic BannerRectGreen 174
+SetStaticName 26 BannerRectBlue //int
+SetDefaultStatic BannerRectBlue 255
+SetStaticName 27 BannerRectOpacity //int
+SetDefaultStatic BannerRectOpacity 255
+
+SetStaticName 59 BannerTextRed //int
+SetDefaultStatic BannerTextRed 255
+SetStaticName 60 BannerTextGreen //int
+SetDefaultStatic BannerTextGreen 255
+SetStaticName 61 BannerTextBlue //int
+SetDefaultStatic BannerTextBlue 255
+SetStaticName 62 BannerTextOpacity //int
+SetDefaultStatic BannerTextOpacity 255
+SetStaticName 63 BannerTextFont //int
+SetDefaultStatic BannerTextFont 7
+
+SetStaticName 28 MaxOptions //int
+SetDefaultStatic MaxOptions 12
+SetStaticName 29 RectsXCoordinate //float
+SetDefaultStatic RectsXCoordinate 0.145
+SetStaticName 30 TextXCoordinate //float
+SetDefaultStatic TextXCoordinate 0.06
+
+SetStaticName 31 BodyRectRed //int
+SetDefaultStatic BodyRectRed 15
+SetStaticName 32 BodyRectGreen //int
+SetDefaultStatic BodyRectGreen 15
+SetStaticName 33 BodyRectBlue //int
+SetDefaultStatic BodyRectBlue 15
+SetStaticName 34 BodyRectOpacity //int
+SetDefaultStatic BodyRectOpacity 255
+
+SetStaticName 64 BodyTextRed //int
+SetDefaultStatic BodyTextRed 255
+SetStaticName 65 BodyTextGreen //int
+SetDefaultStatic BodyTextGreen 255
+SetStaticName 66 BodyTextBlue //int
+SetDefaultStatic BodyTextBlue 255
+SetStaticName 67 BodyTextOpacity //int
+SetDefaultStatic BodyTextOpacity 255
+SetStaticName 68 BodyTextFont //int
+SetDefaultStatic BodyTextFont 0
+
+SetStaticName 35 ScrollerRed //int
+SetDefaultStatic ScrollerRed 0
+SetStaticName 36 ScrollerGreen //int
+SetDefaultStatic ScrollerGreen 174
+SetStaticName 37 ScrollerBlue //int
+SetDefaultStatic ScrollerBlue 255
+SetStaticName 38 ScrollerOpacity //int
+SetDefaultStatic ScrollerOpacity 255
+
+SetStaticName 39 IndicatorRed //int
+SetDefaultStatic IndicatorRed 255
+SetStaticName 40 IndicatorGreen //int
+SetDefaultStatic IndicatorGreen 255
+SetStaticName 41 IndicatorBlue //int
+SetDefaultStatic IndicatorBlue 255
+SetStaticName 42 IndicatorOpacity //int
+SetDefaultStatic IndicatorOpacity 255
+//<
+//> Misc
+SetStaticName 43 StringBuffer //string
+SetStaticName 70 SelectedPlayer //int
+SetStaticName 72 SuperJump //bool
+SetStaticName 73 ExplosiveBullets //bool
+SetStaticName 75 CustomScriptbool1 //bool
+SetStaticName 76 CustomScriptbool2 //bool
+ 
+SetStaticName 77 scriptLoad //bool
+SetStaticName 78 scriptName //bool
+
+//<
+//Start your own statics at 75.
+//Don't forget to update the StaticsCount as you add more!
+//<
+//> not needed now
+//> Enums
+SetEnum INPUT_FRONTEND_ACCEPT 177
+SetEnum INPUT_FRONTEND_CANCEL 178
+SetEnum INPUT_FRONTEND_X 179
+SetEnum INPUT_FRONTEND_LB 181
+SetEnum INPUT_SCRIPT_PAD_UP 202
+SetEnum INPUT_SCRIPT_PAD_DOWN 203
+SetEnum INPUT_SCRIPT_PAD_LEFT 204
+SetEnum INPUT_SCRIPT_PAD_RIGHT 205
+
+SetEnum EXPLOSION_BLIMP 29
+//<
+
+//> Unknown Natives
+SetNativeName 0x029D3841 _GET_NUMBER_OF_INSTANCES_OF_STREAMED_SCRIPT
+SetNativeName 0x3E35563E _SET_TEXT_ENTRY
+SetNativeName 0xF42C43C7 _SET_TEXT_ENTRY_2
+SetNativeName 0x27A244D8 _ADD_TEXT_COMPONENT_STRING
+SetNativeName 0x6F8350CE _DRAW_TEXT
+SetNativeName 0x38F82261 _DRAW_SUBTITLE_TIMED
+//<
+
+//> void Entry()
+Function 0 2
+CallNative network_set_script_is_safe_for_network_game 0 0
+CallNative get_this_script_name 0 1
+GetHash
+CallNative _GET_NUMBER_OF_INSTANCES_OF_STREAMED_SCRIPT 1 1
+Push_1
+JumpGT @CancelEntry
+Call @Main
+:CancelEntry
+Return 0 0
+//<
+
+//> void ClosedMenuMonitor()
+:ClosedMenuMonitor
+Function 0 2
+Push_2
+Push GetEnum("INPUT_FRONTEND_LB")
+CallNative IS_CONTROL_PRESSED 2 1
+JumpFalse @EndClosedMenuMonitor
+Push_2
+Push GetEnum("INPUT_FRONTEND_X")
+CallNative IS_CONTROL_PRESSED 2 1
+JumpFalse @EndClosedMenuMonitor
+PushString "SELECT"
+Call @PlayFrontendSound
+Push GetLoc("MainMenu")
+SetStatic1 CurrentSubmenu
+Push_0
+SetStatic1 SubmenuLevel
+Push_1
+SetStatic1 CurrentOption
+Push_0
+CallNative SETTIMERA 1 0
+:EndClosedMenuMonitor
+Return 0 0
+//<
+
+//> void OpenMenuMonitor()
+:OpenMenuMonitor
+Function 0 2
+Call @DisableControls
+Call @DrawBackground
+Call @DrawInfo
+Push_2
+Push GetEnum("INPUT_SCRIPT_PAD_UP")
+CallNative IS_DISABLED_CONTROL_PRESSED 2 1
+CallNative TIMERA 0 1
+GetStatic1 ScrollDelay
+CmpGT
+And
+JumpTrue @MenuUp
+:MenuCheckDown
+Push_2
+Push GetEnum("INPUT_SCRIPT_PAD_DOWN")
+CallNative IS_DISABLED_CONTROL_PRESSED 2 1
+CallNative TIMERA 0 1
+GetStatic1 ScrollDelay
+CmpGT
+And
+JumpTrue @MenuDown
+:MenuCheckBack
+Push_2
+Push GetEnum("INPUT_FRONTEND_CANCEL")
+CallNative IS_DISABLED_CONTROL_JUST_PRESSED 2 1
+JumpTrue @MenuBack
+Jump @EndOpenMenuMonitor
+:MenuUp
+PushString "NAV_UP_DOWN"
+Call @PlayFrontendSound
+Push_0
+CallNative SETTIMERA 1 0
+GetStatic1 CurrentOption
+Push_1
+Sub
+Dup
+SetStatic1 CurrentOption
+Push_1
+JumpLT @MenuSwapToBottom
+Jump @EndOpenMenuMonitor
+:MenuSwapToBottom
+GetStatic1 OptionCount
+SetStatic1 CurrentOption
+Jump @EndOpenMenuMonitor
+:MenuDown
+PushString "NAV_UP_DOWN"
+Call @PlayFrontendSound
+Push_0
+CallNative SETTIMERA 1 0
+GetStatic1 CurrentOption
+Add1 1
+Dup
+SetStatic1 CurrentOption
+GetStatic1 OptionCount
+JumpGT @MenuSwapToTop
+Jump @EndOpenMenuMonitor
+:MenuSwapToTop
+Push_1
+SetStatic1 CurrentOption
+Jump @EndOpenMenuMonitor
+:MenuBack
+PushString "BACK"
+Call @PlayFrontendSound
+GetStatic1 CurrentSubmenu
+Push GetLoc("MainMenu")
+JumpEQ @MenuClose
+GetStatic1 SubmenuLevel
+Push_1
+Sub
+SetStatic1 SubmenuLevel
+//CurrentSubmenu = LastSubmenu[SubmenuLevel]
+GetStatic1 SubmenuLevel
+GetStaticP1 LastSubmenu
+GetArray1 1
+SetStatic1 CurrentSubmenu
+//CurrentOption = LastOption[SubmenuLevel]
+GetStatic1 SubmenuLevel
+GetStaticP1 LastOption
+GetArray1 1
+SetStatic1 CurrentOption
+Jump @EndOpenMenuMonitor
+:MenuClose
+Push_0
+SetStatic1 CurrentSubmenu
+:EndOpenMenuMonitor
+Return 0 0
+//<
+
+//> void ChangeSubmenu(int *NewSubmenu)
+:ChangeSubmenu
+Function 1 3
+SetFrameName 0 NewSubmenu
+//LastSubmenu[SubmenuLevel] = CurrentSubmenu
+GetStatic1 CurrentSubmenu
+GetStatic1 SubmenuLevel
+GetStaticP1 LastSubmenu
+SetArray1 1
+//LastOption[SubmenuLevel] = CurrentOption
+GetStatic1 CurrentOption
+GetStatic1 SubmenuLevel
+GetStaticP1 LastOption
+SetArray1 1
+Push_1
+SetStatic1 CurrentOption
+GetFrame1 NewSubmenu
+SetStatic1 CurrentSubmenu
+GetStatic1 SubmenuLevel
+Add1 1
+SetStatic1 SubmenuLevel
+Return 1 0
+//<
+
+//> void ResetFrameVars()
+:ResetFrameVars
+Function 0 2
+Push_0
+SetStatic1 OptionCount
+PushString ""
+SetStatic1 MenuInfo
+Return 0 0
+//<
+
+//> Option Helpers
+//> bool IsOptionReady(bool CheckPress)
+:IsOptionReady
+Function 1 3
+SetFrameName 0 CheckPress
+GetStatic1 CurrentOption
+GetStatic1 OptionCount
+JumpNE @OptionNotReady
+GetFrame1 CheckPress
+JumpFalse @OptionReady
+Push_2
+Push GetEnum("INPUT_FRONTEND_ACCEPT")
+CallNative IS_DISABLED_CONTROL_JUST_PRESSED 2 1
+JumpFalse @OptionNotReady
+:OptionReady
+Push_1
+Return 1 1
+
+:OptionNotReady
+Push_0
+Return 1 1
+//<
+
+//> int GetOption()
+:GetOption
+Function 0 2
+Push_2
+Push GetEnum("INPUT_FRONTEND_ACCEPT")
+CallNative IS_DISABLED_CONTROL_JUST_PRESSED 2 1
+JumpFalse @GetOptionFail
+GetStatic1 CurrentOption
+Return 0 1
+
+:GetOptionFail
+Push_0
+Return 0 1
+//<
+
+//> void AddInfo(string info)
+:AddInfo
+Function 1 3
+SetFrameName 0 Info
+GetStatic1 CurrentOption
+GetStatic1 OptionCount
+JumpNE @EndAddInfo
+GetFrame1 Info
+SetStatic1 MenuInfo
+:EndAddInfo
+Return 1 0
+//<
+
+//> void AddSubmenuOption(string Option, int *NewSubmenu)
+:AddSubmenuOption
+Function 2 4
+SetFrameName 0 Option
+SetFrameName 1 NewSubmenu
+GetFrame1 Option
+Call @AddOption
+Push_1
+Call @IsOptionReady
+JumpFalse @EndAddSubmenuOption
+GetFrame1 NewSubmenu
+Call @ChangeSubmenu
+:EndAddSubmenuOption
+Return 2 0
+//<
+
+//<
+//<
+//> void AddBoolOption(string Option, bool Value)
+:AddBoolOption
+Function 2 4
+SetFrameName 0 Option
+SetFrameName 1 Value
+GetFrame1 Value
+JumpFalse @AddBoolOptionFalse
+GetFrame1 Option
+PushString ":~g~ On"
+Call @CombineStrings
+Call @AddOption
+Jump @EndAddBoolOption
+:AddBoolOptionFalse
+GetFrame1 Option
+PushString ":~r~ Off"
+Call @CombineStrings
+Call @AddOption
+:EndAddBoolOption
+Return 2 0
+//<
+
+//> void AddCustomBoolOption(string Option, any Value, any Match)
+:AddCustomBoolOption
+Function 3 5
+SetFrameName 0 Option
+SetFrameName 1 Value
+SetFrameName 2 Match
+GetFrame1 Value
+GetFrame1 Match
+JumpEQ @AddCustomBoolOptionTrue
+GetFrame1 Option
+PushString ":~r~ Off"
+Call @CombineStrings
+Call @AddOption
+Jump @EndAddCustomBoolOption
+:AddCustomBoolOptionTrue
+GetFrame1 Option
+PushString ":~g~ On"
+Call @CombineStrings
+Call @AddOption
+:EndAddCustomBoolOption
+Return 3 0
+//<
+//> void AddScriptOption(string displayName, string actualName, string info)
+:AddScriptOptionoriginal
+Function 3 5
+SetFrameName 0 displayName11
+SetFrameName 1 actualName11
+SetFrameName 2 info11
+GetFrame1 displayName11
+GetFrame1 actualName11
+CallNative DOES_SCRIPT_EXIST 1 1
+GetFrame1 actualName11
+GetHash
+CallNative UNK_0x029D3841 1 1
+Push_0
+CmpGT
+And
+Call @AddBoolOption
+GetFrame1 info11
+Call @AddInfo
+Return 3 0
+//<
+
+
+
+//> not needed now 2
+//> void AddIntOption(string option, int *var, int min, int max, bool keyboardOnPress, bool fastScroll)
+:AddIntOption
+Function 6 8
+SetFrameName 0 Option
+SetFrameName 1 Var
+SetFrameName 2 Min
+SetFrameName 3 Max
+SetFrameName 4 KeyboardPress
+SetFrameName 5 FastScroll
+GetFrame1 Option
+PushString ": "
+Call @CombineStrings
+GetFrame1 Var
+pGet
+Call @AddIntToString
+Call @AddOption
+Push_0
+Call @IsOptionReady
+JumpFalse @EndAddIntOption
+Push_2
+Push GetEnum("INPUT_SCRIPT_PAD_LEFT")
+GetFrame1 FastScroll
+JumpFalse @AddIntOptionLeftSlow
+CallNative IS_DISABLED_CONTROL_PRESSED 2 1
+JumpTrue @AddIntOptionMinus
+Jump @AddIntOptionCheckRight
+:AddIntOptionLeftSlow
+CallNative IS_DISABLED_CONTROL_JUST_PRESSED 2 1
+JumpTrue @AddIntOptionMinus
+:AddIntOptionCheckRight
+Push_2
+Push GetEnum("INPUT_SCRIPT_PAD_RIGHT")
+GetFrame1 FastScroll
+JumpFalse @AddIntOptionRightSlow
+CallNative IS_DISABLED_CONTROL_PRESSED 2 1
+JumpTrue @AddIntOptionPlus
+Jump @AddIntOptionCheckKeyboard
+:AddIntOptionRightSlow
+CallNative IS_DISABLED_CONTROL_JUST_PRESSED 2 1
+JumpTrue @AddIntOptionPlus
+Jump @AddIntOptionCheckKeyboard
+:AddIntOptionMinus
+PushString "NAV_UP_DOWN"
+Call @PlayFrontendSound
+GetFrame1 Var
+pGet
+Push_1
+Sub
+GetFrame1 Min
+JumpLT @AddIntOptionMax
+GetFrame1 Var
+pGet
+Push_1
+Sub
+GetFrame1 Var
+pSet
+Jump @AddIntOptionCheckKeyboard
+:AddIntOptionMax
+GetFrame1 Max
+GetFrame1 Var
+pSet
+Jump @AddIntOptionCheckKeyboard
+:AddIntOptionPlus
+PushString "NAV_UP_DOWN"
+Call @PlayFrontendSound
+GetFrame1 Var
+pGet
+Add1 1
+GetFrame1 Max
+JumpGT @AddIntOptionMin
+GetFrame1 Var
+pGet
+Add1 1
+GetFrame1 Var
+pSet
+Jump @AddIntOptionCheckKeyboard
+:AddIntOptionMin
+GetFrame1 Min
+GetFrame1 Var
+pSet
+:AddIntOptionCheckKeyboard
+GetFrame1 KeyboardPress
+JumpFalse @EndAddIntOption
+Push_0
+Call @IsOptionReady
+JumpFalse @EndAddIntOption
+Push_2
+Push GetEnum("INPUT_FRONTEND_X")
+CallNative IS_DISABLED_CONTROL_PRESSED 2 1
+JumpFalse @EndAddIntOption
+GetFrame1 Var
+pGet
+Call @IntToString
+GetFrame1 Max
+Call @IntToString
+CallNative GET_LENGTH_OF_LITERAL_STRING 1 1
+Add1 1
+Call @PromptKeyboard
+GetFrame1 Var
+pSet
+:EndAddIntOption
+Return 6 0
+//<
+
+//> void AddIntOptionCallback(string option, int *var, int min, int max, bool keyboardOnPress, bool fastScroll, int *callbackFunc)
+:AddIntOptionCallback
+Function 7 10
+SetFrameName 1 Var
+SetFrameName 9 VarCache
+GetFrame1 Var
+pGet
+SetFrame1 VarCache
+GetFrame1 0
+GetFrame1 Var
+GetFrame1 2
+GetFrame1 3
+GetFrame1 4
+GetFrame1 5
+Call @AddIntOption
+Push_0
+Call @IsOptionReady
+JumpFalse @EndAddIntOptionCallback
+GetFrame1 Var
+pGet
+GetFrame1 VarCache
+JumpNE @AddIntOptionCallbackExecute
+Jump @EndAddIntOptionCallback
+:AddIntOptionCallbackExecute
+GetFrame1 6
+pCall
+:EndAddIntOptionCallback
+Return 7 0
+//<
+
+//> void AddFloatOption(string option, float *var, float min, float max, float increment, int precision, bool FastScroll)
+:AddFloatOption
+Function 7 25
+SetFrameName 0 Option
+SetFrameName 1 Var
+SetFrameName 2 Min
+SetFrameName 3 Max
+SetFrameName 4 Increment
+SetFrameName 5 Precision
+SetFrameName 6 FastScroll
+SetFrameName 9 TempStringBuffer
+SetFrameName 17 TempStringBuffer2
+
+//TempStringBuffer = Option + ": "
+GetFrame1 Option
+GetFrameP1 TempStringBuffer
+StrCopy 32
+PushString ": "
+GetFrameP1 TempStringBuffer
+StrAdd 32
+
+//TempStringBuffer2 = FloatToString(Var, Precision)
+GetFrame1 Var
+pGet
+GetFrame1 Precision
+Call @FloatToString
+GetFrameP1 TempStringBuffer2
+StrCopy 32
+
+//StringBuffer = TempStringBuffer + TempStringBuffer2
+GetFrameP1 TempStringBuffer
+GetFrameP1 TempStringBuffer2
+Call @CombineStrings
+Call @AddOption
+
+Push_0
+Call @IsOptionReady
+JumpFalse @EndAddFloatOption
+Push_2
+Push GetEnum("INPUT_SCRIPT_PAD_LEFT")
+GetFrame1 FastScroll
+JumpFalse @AddFloatOptionLeftSlow
+CallNative IS_DISABLED_CONTROL_PRESSED 2 1
+JumpTrue @AddFloatOptionMinus
+Jump @AddFloatOptionCheckRight
+:AddFloatOptionLeftSlow
+CallNative IS_DISABLED_CONTROL_JUST_PRESSED 2 1
+JumpTrue @AddFloatOptionMinus
+:AddFloatOptionCheckRight
+Push_2
+Push GetEnum("INPUT_SCRIPT_PAD_RIGHT")
+GetFrame1 FastScroll
+JumpFalse @AddFloatOptionRightSlow
+CallNative IS_DISABLED_CONTROL_PRESSED 2 1
+JumpTrue @AddFloatOptionPlus
+Jump @EndAddFloatOption
+:AddFloatOptionRightSlow
+CallNative IS_DISABLED_CONTROL_JUST_PRESSED 2 1
+JumpTrue @AddFloatOptionPlus
+Jump @EndAddFloatOption
+:AddFloatOptionMinus
+PushString "NAV_UP_DOWN"
+Call @PlayFrontendSound
+GetFrame1 Var
+pGet
+GetFrame1 Increment
+FSub
+GetFrame1 Min
+JumpLT @AddFloatOptionMax
+GetFrame1 Var
+pGet
+GetFrame1 Increment
+FSub
+GetFrame1 Var
+pSet
+Jump @EndAddFloatOption
+:AddFloatOptionMax
+GetFrame1 Max
+GetFrame1 Var
+pSet
+Jump @EndAddFloatOption
+:AddFloatOptionPlus
+PushString "NAV_UP_DOWN"
+Call @PlayFrontendSound
+GetFrame1 Var
+pGet
+GetFrame1 Increment
+FAdd
+GetFrame1 Max
+JumpGT @AddFloatOptionMin
+GetFrame1 Var
+pGet
+GetFrame1 Increment
+FAdd
+GetFrame1 Var
+pSet
+Jump @EndAddFloatOption
+:AddFloatOptionMin
+GetFrame1 Min
+GetFrame1 Var
+pSet
+:EndAddFloatOption
+Return 7 0
+//<
+
+//> void AddFloatOptionCallback(string option, float *var, float min, float max, float increment, int precision, bool FastScroll, int *callbackFunc)
+:AddFloatOptionCallback
+Function 8 11
+SetFrameName 1 Var
+SetFrameName 10 VarCache
+GetFrame1 Var
+pGet
+SetFrame1 VarCache
+GetFrame1 0
+GetFrame1 Var
+GetFrame1 2
+GetFrame1 3
+GetFrame1 4
+GetFrame1 5
+GetFrame1 6
+Call @AddFloatOption
+Push_0
+Call @IsOptionReady
+JumpFalse @EndAddFloatOptionCallback
+GetFrame1 Var
+pGet
+GetFrame1 VarCache
+JumpNE @AddFloatOptionCallbackExecute
+Jump @EndAddFloatOptionCallback
+:AddFloatOptionCallbackExecute
+GetFrame1 7
+pCall
+:EndAddFloatOptionCallback
+Return 7 0
+//<
+
+//> void AddPlayerOption(int player)
+:AddPlayerOption
+Function 1 3
+SetFrameName 0 Player
+GetFrame1 Player
+CallNative NETWORK_IS_PLAYER_CONNECTED 1 1
+JumpFalse @AddPlayerOptionNotConnected
+GetFrame1 Player
+CallNative GET_PLAYER_NAME 1 1
+Call @AddOption
+Push_1
+Call @IsOptionReady
+JumpFalse @EndAddPlayerOption
+GetStatic1 CurrentOption
+Push_1
+Sub
+SetStatic1 SelectedPlayer
+Push GetLoc("PlayerOptions")
+Call @ChangeSubmenu
+Jump @EndAddPlayerOption
+:AddPlayerOptionNotConnected
+PushString "Not Connected"
+Call @AddOption
+:EndAddPlayerOption
+Return 1 0
+//<
+
+//> void AddMenuSideOption()
+:AddMenuSideOption
+Function 0 2
+GetStatic1 29
+PushF 0.145
+JumpEQ @AddMenuSideOptionRight
+PushString "Menu Side:~G~ Left"
+Call @AddOption
+Jump @EndAddMenuSideOption
+:AddMenuSideOptionRight
+PushString "Menu Side:~G~ Right"
+Call @AddOption
+:EndAddMenuSideOption
+Return 0 0
+//<
+
+
+//> Misc
+//> void PlayFrontendSound(string sound)
+:PlayFrontendSound
+Function 1 3
+SetFrameName 0 Sound
+GetStatic1 MenuSounds
+JumpFalse @EndPlayFrontendSound
+Push_-1
+GetFrame1 Sound
+PushString "HUD_FRONTEND_DEFAULT_SOUNDSET"
+CallNative PLAY_SOUND_FRONTEND 3 0
+:EndPlayFrontendSound
+Return 1 0
+//<
+
+//> void DisableControls()
+:DisableControls
+Function 0 2
+CallNative HIDE_HELP_TEXT_THIS_FRAME 0 0
+Push_0
+CallNative SET_CINEMATIC_BUTTON_ACTIVE 1 0
+PushB 10
+CallNative HIDE_HUD_COMPONENT_THIS_FRAME 1 0
+Push_6
+CallNative HIDE_HUD_COMPONENT_THIS_FRAME 1 0
+Push_7
+CallNative HIDE_HUD_COMPONENT_THIS_FRAME 1 0
+PushB 9
+CallNative HIDE_HUD_COMPONENT_THIS_FRAME 1 0
+PushB 8
+CallNative HIDE_HUD_COMPONENT_THIS_FRAME 1 0
+Push_0
+PushB 19
+CallNative DISABLE_CONTROL_ACTION 2 0
+Push_0
+PushB 20
+CallNative DISABLE_CONTROL_ACTION 2 0
+Push_0
+PushB 21
+CallNative DISABLE_CONTROL_ACTION 2 0
+Push_0
+PushB 27
+CallNative DISABLE_CONTROL_ACTION 2 0
+Push_0
+PushB 54
+CallNative DISABLE_CONTROL_ACTION 2 0
+Push_0
+PushB 123
+CallNative DISABLE_CONTROL_ACTION 2 0
+Push_0
+PushB 124
+CallNative DISABLE_CONTROL_ACTION 2 0
+Push_0
+PushB 125
+CallNative DISABLE_CONTROL_ACTION 2 0
+Push_0
+PushB 126
+CallNative DISABLE_CONTROL_ACTION 2 0
+Push_0
+PushB 138
+CallNative DISABLE_CONTROL_ACTION 2 0
+Push_0
+PushB 139
+CallNative DISABLE_CONTROL_ACTION 2 0
+Push_0
+PushB 140
+CallNative DISABLE_CONTROL_ACTION 2 0
+Push_2
+PushB 177
+CallNative DISABLE_CONTROL_ACTION 2 0
+Push_2
+PushB 178
+CallNative DISABLE_CONTROL_ACTION 2 0
+Push_2
+PushB 179
+CallNative DISABLE_CONTROL_ACTION 2 0
+Push_0
+PushB 207
+CallNative DISABLE_CONTROL_ACTION 2 0
+Push_2
+PushB 166
+CallNative SET_INPUT_EXCLUSIVE 2 0
+Push_2
+PushB 167
+CallNative SET_INPUT_EXCLUSIVE 2 0
+Push_2
+PushB 177
+CallNative SET_INPUT_EXCLUSIVE 2 0
+Push_2
+PushB 178
+CallNative SET_INPUT_EXCLUSIVE 2 0
+Push_2
+PushB 202
+CallNative SET_INPUT_EXCLUSIVE 2 0
+Push_2
+PushB 203
+CallNative SET_INPUT_EXCLUSIVE 2 0
+Return 0 0
+//<
+
+//> string IntToString(int num)
+:IntToString
+Function 1 3
+SetFrameName 0 Number
+PushString ""
+SetStatic1 StringBuffer
+GetFrame1 Number
+GetStaticP1 StringBuffer
+ItoS 64
+GetStaticP1 StringBuffer
+Return 1 1
+//<
+
+//> int StringToInt(string str)
+:StringToInt
+Function 1 4
+SetFrameName 0 String
+SetFrameName 3 IntBuffer //int
+GetFrame1 String
+GetFrameP1 IntBuffer
+CallNative STRING_TO_INT 2 1
+Drop
+GetFrame1 IntBuffer
+Return 1 1
+//<
+
+//> string CombineStrings(string str1, string str2)
+:CombineStrings
+Function 2 4
+SetFrameName 0 String1
+SetFrameName 1 String2
+GetFrame1 String1
+GetStaticP1 StringBuffer
+StrCopy 32
+GetFrame1 String2
+GetStaticP1 StringBuffer
+StrAdd 32
+GetStaticP1 StringBuffer
+Return 2 1
+//<
+
+//> string AddIntToString(string str, int num)
+:AddIntToString
+Function 2 4
+SetFrameName 0 String
+SetFrameName 1 Number
+GetFrame1 String
+GetStaticP1 StringBuffer
+StrCopy 32
+GetFrame1 Number
+GetStaticP1 StringBuffer
+StrAddi 32
+GetStaticP1 StringBuffer
+Return 2 1
+//<
+
+//> string FloatToString(float input, int precision)
+//Thanks to Rock aka ap ii intense for this!
+:FloatToString
+Function 2 18
+SetFrameName 0 Input
+SetFrameName 1 Precision
+SetFrameName 4 LeftNumber
+SetFrameName 5 Remainder
+SetFrameName 6 Inc
+SetFrameName 7 RemainderLength
+SetFrameName 8 RemainderString
+GetFrame1 Input
+FToI
+SetFrame1 LeftNumber
+PushString ""
+GetStaticP1 StringBuffer
+StrCopy 64
+GetFrame1 LeftNumber
+GetStaticP1 StringBuffer
+IToS 64
+PushString "."
+GetStaticP1 StringBuffer
+StrAdd 64
+GetFrame1 Input
+GetFrame1 LeftNumber
+ItoF
+FSub //Remainder
+CallNative absf 1 1
+PushF 10
+GetFrame1 Precision
+IToF
+CallNative pow 2 1
+FMult
+FToI
+SetFrame1 Remainder
+GetFrame1 Remainder
+GetFrameP1 RemainderString
+ItoS 32
+GetFrame1 Precision
+GetFrameP1 RemainderString
+CallNative get_length_of_literal_string 1 1
+Sub
+Dup
+SetFrame1 RemainderLength
+Push_0
+JumpLE @EndFloatToString
+Push_0
+SetFrame1 Inc
+:FloatToStringPaddingLoop
+GetFrame1 Inc
+GetFrame1 RemainderLength
+JumpGE @EndFloatToString
+PushString "0"
+GetStaticP1 StringBuffer
+StrAdd 64
+GetFrame1 Inc
+Add1 1
+SetFrame1 Inc
+Jump @FloatToStringPaddingLoop
+:EndFloatToString
+GetframeP1 RemainderString
+GetStaticP1 StringBuffer
+StrAdd 64
+GetStaticP1 StringBuffer
+return 2 1
+//<
+
+//> string PromptKeyboard(string default, int maxLength)
+:PromptKeyboard
+Function 2 4
+SetFrameName 0 Default
+SetFrameName 1 MaxLength
+Push_0
+PushString "FMMC_KEY_TIP8"
+PushString ""
+GetFrame1 Default
+PushString ""
+PushString ""
+PushString ""
+GetFrame1 MaxLength
+CallNative DISPLAY_ONSCREEN_KEYBOARD 8 0
+PushB 100
+CallNative WAIT 1 0
+:CheckResponse
+Push_0
+CallNative WAIT 1 0
+CallNative IS_SYSTEM_UI_BEING_DISPLAYED 0 1
+JumpFalse @ReturnResponse
+Jump @CheckResponse
+:ReturnResponse
+CallNative GET_ONSCREEN_KEYBOARD_RESULT 0 1
+Return 2 1
+//<
+//<
+
+//> Drawing
+//> void DrawBackground()
+:DrawBackground
+Function 0 4
+SetFrameName 2 BodyAccuracy
+SetFrameName 3 ScrollerAccuracy
+//> Accuracy
+GetStatic1 OptionCount
+GetStatic1 MaxOptions
+JumpGT @AccuracyChange
+GetStatic1 OptionCount
+SetFrame1 BodyAccuracy
+GetStatic1 CurrentOption
+SetFrame1 ScrollerAccuracy
+Jump @AccuracyContinue
+:AccuracyChange
+GetStatic1 MaxOptions
+Dup
+SetFrame1 BodyAccuracy
+SetFrame1 ScrollerAccuracy
+GetStatic1 CurrentOption
+GetStatic1 MaxOptions
+JumpGT @AccuracyContinue
+GetStatic1 CurrentOption
+SetFrame1 ScrollerAccuracy
+:AccuracyContinue
+//<
+//> Body
+GetStatic1 RectsXCoordinate
+//Calculate Y Coordinate
+GetFrame1 BodyAccuracy
+IToF
+PushF 0.035
+FMult
+PushF_2
+FDiv
+PushF 0.159
+FAdd
+PushF 0.19
+//Calculate Length
+GetFrame1 BodyAccuracy
+IToF
+PushF 0.035
+FMult
+GetStatic1 BodyRectRed
+GetStatic1 BodyRectGreen
+GetStatic1 BodyRectBlue
+GetStatic1 BodyRectOpacity
+CallNative DRAW_RECT 8 0
+//<
+//> Scroller
+GetStatic1 RectsXCoordinate
+//Calculate Y Coordinate
+GetFrame1 ScrollerAccuracy
+IToF
+PushF 0.035
+FMult
+PushF 0.1415
+FAdd
+PushF 0.19
+PushF 0.035
+GetStatic1 ScrollerRed
+GetStatic1 ScrollerGreen
+GetStatic1 ScrollerBlue
+GetStatic1 ScrollerOpacity
+CallNative DRAW_RECT 8 0
+//<
+//> Banner
+GetStatic1 RectsXCoordinate
+PushF 0.1175
+PushF 0.19
+PushF 0.083
+GetStatic1 BannerRectRed
+GetStatic1 BannerRectGreen
+GetStatic1 BannerRectBlue
+GetStatic1 BannerRectOpacity
+CallNative DRAW_RECT 8 0
+//<
+//> Indicators
+GetStatic1 OptionCount
+GetStatic1 MaxOptions
+JumpLE @EndDrawBackground
+GetStatic1 CurrentOption
+GetStatic1 MaxOptions
+JumpLE @DownIndicator
+GetStatic1 RectsXCoordinate
+PushF 0.156
+PushF 0.19
+PushF 0.005
+GetStatic1 IndicatorRed
+GetStatic1 IndicatorGreen
+GetStatic1 IndicatorBlue
+GetStatic1 IndicatorOpacity
+CallNative DRAW_RECT 8 0
+:DownIndicator
+GetStatic1 CurrentOption
+GetStatic1 OptionCount
+JumpEQ @EndDrawBackground
+GetStatic1 RectsXCoordinate
+//Calculate Y Coordinate
+GetStatic1 MaxOptions
+IToF
+PushF 0.035
+FMult
+PushF 0.161
+FAdd
+PushF 0.19
+PushF 0.005
+GetStatic1 IndicatorRed
+GetStatic1 IndicatorGreen
+GetStatic1 IndicatorBlue
+GetStatic1 IndicatorOpacity
+CallNative DRAW_RECT 8 0
+//<
+:EndDrawBackground
+Return 0 0
+//<
+
+//> void StringBase()
+:StringBase
+Function 0 2
+Push_0
+CallNative SET_TEXT_FONT 1 0
+PushF 0.4
+PushF 0.4
+CallNative SET_TEXT_SCALE 2 0
+Push 255
+Push 255
+Push 255
+Push 255
+CallNative SET_TEXT_COLOUR 4 0
+PushF_0
+PushF_1
+CallNative SET_TEXT_WRAP 2 0
+Push_0
+CallNative SET_TEXT_CENTRE 1 0
+Push_0
+Push_0
+Push_0
+Push_0
+Push_0
+CallNative SET_TEXT_DROPSHADOW 5 0
+Push_0
+Push_0
+Push_0
+Push_0
+Push_0
+CallNative SET_TEXT_EDGE 5 0
+CallNative SET_TEXT_OUTLINE 0 0
+Return 0 0
+//<
+
+//> void AddTitle(string title)
+:AddTitle
+Function 1 3
+SetFrameName 0 Title
+Call @StringBase
+GetStatic1 BannerTextFont
+CallNative SET_TEXT_FONT 1 0
+GetStatic1 BannerTextRed
+GetStatic1 BannerTextGreen
+GetStatic1 BannerTextBlue
+GetStatic1 BannerTextOpacity
+CallNative SET_TEXT_COLOUR 4 0
+PushF 0.75
+PushF 0.75
+CallNative SET_TEXT_SCALE 2 0
+Push_1
+CallNative SET_TEXT_CENTRE 1 0
+PushString "STRING"
+CallNative _SET_TEXT_ENTRY 1 0
+GetFrame1 Title
+CallNative _ADD_TEXT_COMPONENT_STRING 1 0
+GetStatic1 RectsXCoordinate
+PushF 0.1
+CallNative _DRAW_TEXT 2 0
+Return 1 0
+//<
+
+//> void AddOption(string option)
+:AddOption
+Function 1 4
+SetFrameName 0 Option
+SetFrameName 3 OptionYCoordinate
+GetStatic1 OptionCount
+Add1 1
+SetStatic1 OptionCount
+GetStatic1 CurrentOption
+GetStatic1 MaxOptions
+JumpLE @AddOptionEasyMath
+GetStatic1 OptionCount
+GetStatic1 CurrentOption
+GetStatic1 MaxOptions
+Push_1
+Sub
+Sub
+JumpLT @EndAddOption
+GetStatic1 OptionCount
+GetStatic1 CurrentOption
+JumpGT @EndAddOption
+GetStatic1 OptionCount
+GetStatic1 CurrentOption
+GetStatic1 MaxOptions
+Sub
+Sub
+IToF
+PushF 0.035
+FMult
+PushF 0.125
+FAdd
+SetFrame1 OptionYCoordinate
+Jump @AddOptionDrawText
+:AddOptionEasyMath
+GetStatic1 OptionCount
+GetStatic1 MaxOptions
+JumpGT @EndAddOption
+GetStatic1 OptionCount
+IToF
+PushF 0.035
+FMult
+PushF 0.125
+FAdd
+SetFrame1 OptionYCoordinate
+:AddOptionDrawText
+Call @StringBase
+GetStatic1 BodyTextFont
+CallNative SET_TEXT_FONT 1 0
+GetStatic1 BodyTextRed
+GetStatic1 BodyTextGreen
+GetStatic1 BodyTextBlue
+
+GetStatic1 BodyTextOpacity
+CallNative SET_TEXT_COLOUR 4 0
+PushString "STRING"
+CallNative _SET_TEXT_ENTRY 1 0
+GetFrame1 Option
+CallNative _ADD_TEXT_COMPONENT_STRING 1 0
+GetStatic1 TextXCoordinate
+GetFrame1 OptionYCoordinate
+CallNative _DRAW_TEXT 2 0
+:EndAddOption
+Return 1 0
+//<
+
+//> void DrawNotification(string notification)
+:DrawNotification
+Function 1 3
+SetFrameName 0 Notification
+PushString "STRING"
+CallNative _SET_TEXT_ENTRY_2 1 0
+GetFrame1 Notification
+CallNative _ADD_TEXT_COMPONENT_STRING 1 0
+PushS 3000
+Push_1
+CallNative _DRAW_SUBTITLE_TIMED 2 0
+Return 1 0
+//<
+
+//> void DrawInfo()
+:DrawInfo
+Function 0 3
+SetFrameName 2 InfoAccuracy
+GetStatic1 MenuInfo
+CallNative IS_STRING_NULL_OR_EMPTY 1 1
+JumpTrue @EndDrawInfo
+GetStatic1 OptionCount
+GetStatic1 MaxOptions
+JumpGT @DrawInfoChangeAccuracy
+GetStatic1 OptionCount
+Add1 1
+SetFrame1 InfoAccuracy
+Jump @DrawInfoContinue
+:DrawInfoChangeAccuracy
+GetStatic1 MaxOptions
+Add1 1
+SetFrame1 InfoAccuracy
+:DrawInfoContinue
+//Text
+Call @StringBase
+GetStatic1 BodyTextFont
+CallNative SET_TEXT_FONT 1 0
+PushF 0.35
+PushF 0.35
+CallNative SET_TEXT_SCALE 2 0
+GetStatic1 BodyTextRed
+GetStatic1 BodyTextGreen
+GetStatic1 BodyTextBlue
+GetStatic1 BodyTextOpacity
+CallNative SET_TEXT_COLOUR 4 0
+Push_1
+CallNative SET_TEXT_CENTRE 1 0
+PushString "STRING"
+CallNative _SET_TEXT_ENTRY 1 0
+GetStatic1 MenuInfo
+CallNative _ADD_TEXT_COMPONENT_STRING 1 0
+GetStatic1 RectsXCoordinate
+GetFrame1 InfoAccuracy
+IToF
+PushF 0.035
+FMult
+PushF 0.125
+FAdd
+CallNative _DRAW_TEXT 2 0
+//Rectangle
+GetStatic1 RectsXCoordinate
+//Calculate Y Coordinate
+GetFrame1 InfoAccuracy
+IToF
+PushF 0.035
+FMult
+PushF 0.1415
+FAdd
+PushF 0.19
+PushF 0.035
+GetStatic1 BannerRectRed
+GetStatic1 BannerRectGreen
+GetStatic1 BannerRectBlue
+GetStatic1 BannerRectOpacity
+CallNative DRAW_RECT 8 0
+:EndDrawInfo
+Return 0 0
+//<
+//<
+//<
+//<not needed 2
+//> void Main()
+:Main
+Function 0 2
+:MainLoop
+Push_0
+CallNative wait 1 0
+Call @check_script
+Call @OtherLoop
+CallNative IS_PAUSE_MENU_ACTIVE 0 1
+JumpTrue @MainLoop
+GetStatic1 CurrentSubmenu
+JumpFalse @CallClosedMenuMonitor
+Call @ResetFrameVars
+GetStatic1 CurrentSubmenu
+pCall
+Call @OpenMenuMonitor
+Jump @MainLoop
+:CallClosedMenuMonitor
+Call @ClosedMenuMonitor
+Jump @MainLoop
+Return 0 0
+//<
+
+
+//> void OtherLoop()
+:OtherLoop
+Function 0 2
+GetStatic1 SuperJump
+JumpFalse @OtherLoopExplosiveBullets
+CallNative PLAYER_ID 0 1
+CallNative SET_SUPER_JUMP_THIS_FRAME 1 0
+:OtherLoopExplosiveBullets
+GetStatic1 ExplosiveBullets
+JumpFalse @EndOtherLoop
+CallNative PLAYER_ID 0 1
+CallNative SET_EXPLOSIVE_AMMO_THIS_FRAME 1 0
+:EndOtherLoop
+Return 0 0
+//<
+
+//> void MainMenu()
+:MainMenu
+Function 0 2
+PushString "Jarvis Menu"
+Call @AddTitle
+PushString "Script Menu`s"
+Push GetLoc("Scriptloader")
+Call @AddSubmenuOption
+PushString "Load Scripts like a modloader"
+Call @AddInfo
+PushString "Online Players"
+Push GetLoc("PlayerList")
+Call @AddSubmenuOption
+PushString "Jarvis Online Players Options"
+Call @AddInfo
+PushString "Player"
+Push GetLoc("SelfOptions")
+Call @AddSubmenuOption
+PushString "Jarvis Self Options"
+Call @AddInfo
+PushString "Teleport"
+Push GetLoc("JarvisTeleport")
+Call @AddSubmenuOption
+PushString "Jarvis Teleport Service"
+Call @AddInfo
+PushString "Settings"
+Push GetLoc("MenuSettings")
+Call @AddSubmenuOption
+PushString "Jarvis Menu Settings"
+Call @AddInfo
+Return 0 0
+//<
+
+
+//> void Teleport1()
+:JarvisTeleport
+Function 0 2
+PushString "Jarvis Teleport"
+Call @AddTitle
+PushString "MazeBank"
+Call @AddOption
+PushString "Teleports to Mazebank"
+Call @AddInfo
+PushString "Airport"
+Call @AddOption
+PushString "Teleports to Airport"
+Call @AddInfo
+PushString "Trevors Airport"
+Call @AddOption
+PushString "Teleports to Trevors Airport"
+Call @AddInfo
+PushString "Fort Zancudo"
+Call @AddOption
+PushString "Teleports to Fort Zancudo"
+Call @AddInfo
+Call @GetOption
+PushString "Teleport 2"
+Push GetLoc("JarvisTeleport2")
+Call @AddSubmenuOption
+PushString "Jarvis Teleport page 2"
+Call @AddInfo
+Switch [1 @TeleportMazeBank]:[2 @TeleportAirport]:[3 @TeleportTrevorsAirfield]:[4 @TeleportFortZancudo]
+Return 0 0
+//<
+
+//> void Teleport2()
+:JarvisTeleport2
+Function 0 2
+PushString "Jarvis Teleport 2"
+Call @AddTitle
+PushString "MazeBank"
+Call @AddOption
+PushString "Teleports to :~r~ Mazebank"
+Call @AddInfo
+PushString "Airport"
+Call @AddOption
+PushString "Teleports to :~r~ Airport"
+Call @AddInfo
+PushString "Trevors Airfield"
+Call @AddOption
+PushString "Teleports to :~r~ Trevors Airfield"
+Call @AddInfo
+PushString "Fort Zancudo"
+Call @AddOption
+PushString "Teleports to :~r~ Fort Zancudo"
+Call @AddInfo
+Call @GetOption
+Switch [1 @TeleportMazeBank]:[2 @TeleportAirport]:[3 @TeleportTrevorsAirfield]:[4 @TeleportFortZancudo]
+Return 0 0
+//<
+
+//> Void Teleport run and feed strings
+//> Void Teleport Feed Strings
+:TeleportMazeBank
+PushF -74.500
+PushF -818.000
+PushF 326.500
+Call @Teleport2
+PushString "Jarvis Teleported to :~b~Maze Bank!"
+Call @PrintTextBar
+Jump @EndTeleport_
+
+:TeleportAirport
+PushF -1102.2910
+PushF -2894.5160
+PushF 13.9467
+Call @Teleport2
+PushString "Jarvis Teleported to :~b~ The Airport!"
+Call @PrintTextBar
+Jump @EndTeleport_
+ 
+
+:TeleportTrevorsAirfield
+PushF 1741.4960
+PushF 3269.2570
+PushF 41.6014
+Call @Teleport2
+PushString "Jarvis Teleported to :~b~Trevors Air field!"
+Call @PrintTextBar
+Jump @EndTeleport_
+
+
+:TeleportFortZancudo
+PushF -2012.8470
+PushF 2956.5270
+PushF 32.8101
+Call @Teleport2
+PushString "Jarvis Teleported to :~b~Fort Zancudo!"
+Call @PrintTextBar
+Jump @EndTeleport_
+
+//<
+//> Void Print text2 ( run string) this print prints it in the feed bar 
+:PrintTextBar
+Function 1 3 
+PushString "STRING"
+CallNative "UNK_574EE85C" 1 0
+GetFrame1 0
+CallNative "UNK_27A244D8" 1 0
+push_0
+push_1
+CallNative "UNK_08F7AF78" 2 1
+Drop
+Return 1 0
+//<
+//> Void Teleport (run string)
+
+:Teleport2
+Function 3 5 
+CallNative "PLAYER_PED_ID" 0 1
+CallNative "IS_PED_SITTING_IN_ANY_VEHICLE" 1 1
+JumpFalse @TeleportNonVehicle_
+CallNative "PLAYER_PED_ID" 0 1
+CallNative "GET_VEHICLE_PED_IS_USING" 1 1
+GetFrame1 0
+GetFrame1 1
+GetFrame1 2
+push_1
+push_0
+push_0
+push_1
+CallNative "SET_ENTITY_COORDS" 8 0
+Jump @EndTeleport_
+:TeleportNonVehicle_
+CallNative "PLAYER_PED_ID" 0 1
+GetFrame1 0
+GetFrame1 1
+GetFrame1 2
+push_1
+push_0
+push_0
+push_1
+CallNative "SET_ENTITY_COORDS" 8 0
+:EndTeleport_
+Return 3 0
+//<
+//<
+
+//> void Scriptloader(menu string )
+:Scriptloader
+Function 0 2
+PushString "Jarvis Modloader"
+Call @AddTitle
+PushString "AP II Intense"
+PushString "apiichef"
+PushString "Opens with ~r~ R1 + Square !"
+Call @AddScriptOption
+PushString "K&K Darkhorse"
+PushString "kkdarkhorse"
+PushString "Opens with ~r~ L1 + R1 !"
+Call @AddScriptOption
+PushString "RayRod"
+PushString "rayrod"
+PushString "Opens with ~r~ L1 + Left !"
+Call @AddScriptOption
+PushString "app ii intense"
+PushString "rockmenu"
+PushString "Opens with ~r~ R1 + Square !"
+Call @AddScriptOption
+PushString "app ii intense"
+PushString "rockmenu"
+PushString "Opens with ~r~ R1 + Square !"
+Call @AddScriptOption
+PushString "app ii intense"
+PushString "rockmenu"
+PushString "Opens with ~r~ R1 + Square !"
+Call @AddScriptOption
+PushString "app ii intense"
+PushString "rockmenu"
+PushString "Opens with ~r~ R1 + Square !"
+Call @AddScriptOption
+PushString "app ii intense"
+PushString "rockmenu"
+PushString "Opens with ~r~ R1 + Square !"
+Call @AddScriptOption
+Call @GetOption
+Switch [1 @callcustomscript1]:[2 @callcustomscript2]:[3 @callcustomscript3]:[4 @callcustomscript4]:[5 @callcustomscript5]:[6 @callcustomscript6]:[7 @callcustomscript7]:[8 @callcustomscript8]
+Return 0 0
+
+//> script name load 
+
+:callcustomscript1
+PushString "rock_menu1"
+Jump @endscriptloader
+
+:callcustomscript2
+PushString "dark_horse"
+Jump @endscriptloader
+
+:callcustomscript3
+PushString "console_trainer_v"
+Jump @endscriptloader
+
+:callcustomscript4
+PushString "spawnerr3r"
+Jump @endscriptloader
+
+:callcustomscript5
+PushString "spawnerrr"
+Jump @endscriptloader
+
+:callcustomscript6
+PushString "garage_editor"
+Jump @endscriptloader
+
+:callcustomscript7
+PushString "script_injector"
+Jump @endscriptloader
+
+:callcustomscript8
+PushString "jarvismegamodmenu"
+Jump @endscriptloader
+
+:endscriptloader
+SetStatic1 scriptName
+push_1
+SetStatic1 scriptLoad
+Return 0 0
+//<
+
+
+//> void AddScriptOption(string displayName, string actualName, string info)
+:AddScriptOption
+Function 3 5
+SetFrameName 0 displayName
+SetFrameName 1 actualName
+SetFrameName 2 info
+GetFrame1 displayName
+GetFrame1 actualName
+CallNative DOES_SCRIPT_EXIST 1 1
+GetFrame1 actualName
+GetHash
+CallNative UNK_0x029D3841 1 1
+Push_0
+CmpGT
+And
+Call @AddBoolOption
+GetFrame1 info
+Call @AddInfo
+Return 3 0
+//<
+
+
+//> script loader string 
+
+
+:check_script
+Function 0 2
+GetStatic1 scriptLoad
+push_0
+JumpEQ @check_script_end
+GetStatic1 scriptLoad
+push_2
+JumpEQ @check_script2
+GetStatic1 scriptName
+CallNative "DOES_SCRIPT_EXIST" 1 1
+JumpFalse @ScriptError
+GetStatic1 scriptName
+GetHash
+CallNative "UNK_029D3841" 1 1
+push_0
+JumpEQ @ifscriptnot_exists
+GetStatic1 scriptName
+CallNative "TERMINATE_ALL_SCRIPTS_WITH_THIS_NAME" 1 0
+push_0
+SetStatic1 scriptLoad
+
+:check_script_end
+Return 0 0
+
+:ifscriptnot_exists
+GetStatic1 scriptName
+CallNative "REQUEST_SCRIPT" 1 0
+push_2
+SetStatic1 scriptLoad
+
+:check_script2
+GetStatic1 scriptName
+CallNative "HAS_SCRIPT_LOADED" 1 1
+JumpTrue @loadscript_end
+Return 0 0
+
+:loadscript_end
+GetStatic1 scriptName
+PushS 1024
+CallNative "START_NEW_SCRIPT" 2 1
+Drop
+push_0
+SetStatic1 scriptLoad
+Return 0 0
+
+:ScriptError
+push_0
+SetStatic1 scriptLoad
+PushString "~r~Script not found."
+Call @DRAW_SUBTITLE
+Return 0 0
+
+:DRAW_SUBTITLE
+Function 1 3
+
+PushString "STRING"
+CallNative "UNK_F42C43C7" 1 0
+GetFrame1 0
+CallNative "UNK_27A244D8" 1 0
+PushS 5000
+push_1
+CallNative "UNK_38F82261" 2 0
+Return 0 0
+//<
+
+//> Player Options
+
+//> void PlayerList()
+:PlayerList
+Function 0 3
+SetFrameName 2 Player
+PushString "Players List"
+Call @AddTitle
+Push_0
+SetFrame1 Player
+:PlayerListLoop
+GetFrame1 Player
+Call @AddPlayerOption
+GetFrame1 Player
+Add1 1
+Dup
+SetFrame1 Player
+PushB 18
+JumpLT @PlayerListLoop
+Return 0 0
+//<
+
+//> void PlayerOptions()
+:PlayerOptions
+Function 0 2
+GetStatic1 SelectedPlayer
+CallNative GET_PLAYER_NAME 1 1
+Call @AddTitle
+PushString "Explode"
+Call @AddOption
+PushString "Teleport To Player"
+Call @AddOption
+Call @GetOption
+Switch [1 @PlayerOptionsExplode]:[2 @PlayerOptionsTeleport]
+Jump @EndPlayerOptions
+:PlayerOptionsExplode
+GetStatic1 SelectedPlayer
+CallNative GET_PLAYER_PED 1 1
+Push_0
+CallNative GET_ENTITY_COORDS 2 3
+Push GetEnum("EXPLOSION_BLIMP")
+PushF_1
+Push_1
+Push_0
+PushF_1
+CallNative ADD_EXPLOSION 8 0
+PushString "Player Exploded!"
+Call @DrawNotification
+Jump @EndPlayerOptions
+:PlayerOptionsTeleport
+CallNative PLAYER_PED_ID 0 1
+GetStatic1 SelectedPlayer
+CallNative GET_PLAYER_PED 1 1
+Push_0
+CallNative GET_ENTITY_COORDS 2 3
+Push_1
+Push_0
+Push_0
+Push_1
+CallNative SET_ENTITY_COORDS 8 0
+PushString "Teleported To Player!"
+Call @DrawNotification
+:EndPlayerOptions
+Return 0 0
+//<
+//<
+
+//> void SelfOptions()
+:SelfOptions
+Function 0 2
+PushString "Self Options"
+Call @AddTitle
+PushString "Godmode"
+CallNative PLAYER_ID 0 1
+CallNative GET_PLAYER_INVINCIBLE 1 1
+Call @AddBoolOption
+PushString "Invisibility"
+CallNative PLAYER_PED_ID 0 1
+CallNative IS_ENTITY_VISIBLE 1 1
+Not
+Call @AddBoolOption
+PushString "Super Jump"
+GetStatic1 SuperJump
+Call @AddBoolOption
+PushString "Explosive Bullets"
+GetStatic1 ExplosiveBullets
+Call @AddBoolOption
+Call @GetOption
+Switch [1 @SelfOptionsGodmode]:[2 @SelfOptionsInvisibility]:[3 @SelfOptionsSuperJump]:[4 @SelfOptionsExplosiveBullets]
+Jump @EndSelfOptions
+:SelfOptionsGodmode
+CallNative PLAYER_ID 0 1
+Dup
+CallNative GET_PLAYER_INVINCIBLE 1 1
+Not
+CallNative SET_PLAYER_INVINCIBLE 2 0
+PushString "Godmode Toggled!"
+Call @DrawNotification
+Jump @EndSelfOptions
+:SelfOptionsInvisibility
+CallNative PLAYER_PED_ID 0 1
+Dup
+CallNative IS_ENTITY_VISIBLE 1 1
+Not
+
+CallNative SET_ENTITY_VISIBLE 2 0
+PushString "Invisibility Toggled!"
+Call @DrawNotification
+Jump @EndSelfOptions
+:SelfOptionsSuperJump
+GetStatic1 SuperJump
+Not
+SetStatic1 SuperJump
+PushString "Super Jump Toggled!"
+Call @DrawNotification
+Jump @EndSelfOptions
+:SelfOptionsExplosiveBullets
+GetStatic1 ExplosiveBullets
+Not
+SetStatic1 ExplosiveBullets
+PushString "Explosive Bullets Toggled!"
+Call @DrawNotification
+:EndSelfOptions
+Return 0 0
+//<
+
+//> Menu Settings
+//> void MenuSettings()
+:MenuSettings
+Function 0 2
+PushString "Jarvis Settings"
+Call @AddTitle
+PushString "Banner"
+Push GetLoc("BannerSettings")
+Call @AddSubmenuOption
+PushString "Body"
+Push GetLoc("BodySettings")
+Call @AddSubmenuOption
+PushString "Scroller"
+Push GetLoc("ScrollerSettings")
+Call @AddSubmenuOption
+PushString "Indicator"
+Push GetLoc("IndicatorSettings")
+Call @AddSubmenuOption
+PushString "Sounds"
+GetStatic1 MenuSounds
+Call @AddBoolOption
+Call @AddMenuSideOption
+PushString "Max Options"
+GetStaticP1 MaxOptions
+Push_1
+PushB 20
+Push_0
+Push_0
+Call @AddIntOption
+PushString "Scroll Delay"
+GetStaticP1 ScrollDelay
+PushB 10
+PushS 400
+Push_0
+Push_1
+Call @AddIntOption
+Call @GetOption
+Switch [5 @MenuSettingsSounds]:[6 @MenuSettingsSide]
+Jump @EndMenuSettings
+:MenuSettingsSounds
+GetStatic1 MenuSounds
+Not
+SetStatic1 MenuSounds
+Jump @EndMenuSettings
+:MenuSettingsSide
+GetStatic1 RectsXCoordinate
+PushF 0.845
+JumpEQ @MenuSettingsLeft
+PushF 0.845
+SetStatic1 RectsXCoordinate
+PushF 0.76
+SetStatic1 TextXCoordinate
+Jump @EndMenuSettings
+:MenuSettingsLeft
+PushF 0.145
+SetStatic1 RectsXCoordinate
+PushF 0.06
+SetStatic1 TextXCoordinate
+:EndMenuSettings
+Return 0 0
+//<
+
+//> void BannerSettings()
+:BannerSettings
+Function 0 2
+PushString "Banner Settings"
+Call @AddTitle
+PushString "Text Red"
+GetStaticP1 BannerTextRed
+Push_0
+PushB 255
+Push_1
+Push_1
+Call @AddIntOption
+PushString "Text Green"
+GetStaticP1 BannerTextGreen
+Push_0
+PushB 255
+Push_1
+Push_1
+Call @AddIntOption
+PushString "Text Blue"
+GetStaticP1 BannerTextBlue
+Push_0
+PushB 255
+Push_1
+Push_1
+Call @AddIntOption
+PushString "Text Opacity"
+GetStaticP1 BannerTextOpacity
+Push_0
+PushB 255
+Push_1
+Push_1
+Call @AddIntOption
+PushString "Text Font"
+GetStaticP1 BannerTextFont
+Push_0
+Push_7
+Push_0
+Push_0
+Call @AddIntOption
+PushString "Rect Red"
+GetStaticP1 BannerRectRed
+Push_0
+PushB 255
+Push_1
+Push_1
+Call @AddIntOption
+PushString "Rect Green"
+GetStaticP1 BannerRectGreen
+Push_0
+PushB 255
+Push_1
+Push_1
+Call @AddIntOption
+PushString "Rect Blue"
+GetStaticP1 BannerRectBlue
+Push_0
+PushB 255
+Push_1
+Push_1
+Call @AddIntOption
+PushString "Rect Opacity"
+GetStaticP1 BannerRectOpacity
+Push_0
+PushB 255
+Push_1
+Push_1
+Call @AddIntOption
+Return 0 0
+//<
+
+//> void BodySettings()
+:BodySettings
+Function 0 2
+PushString "Body Settings"
+Call @AddTitle
+PushString "Text Red"
+GetStaticP1 BodyTextRed
+Push_0
+PushB 255
+Push_1
+Push_1
+Call @AddIntOption
+PushString "Text Green"
+GetStaticP1 BodyTextGreen
+Push_0
+PushB 255
+Push_1
+Push_1
+Call @AddIntOption
+PushString "Text Blue"
+GetStaticP1 BodyTextBlue
+Push_0
+PushB 255
+Push_1
+Push_1
+Call @AddIntOption
+PushString "Text Opacity"
+GetStaticP1 BodyTextOpacity
+Push_0
+PushB 255
+Push_1
+Push_1
+Call @AddIntOption
+PushString "Text Font"
+GetStaticP1 BodyTextFont
+Push_0
+Push_7
+Push_0
+Push_0
+Call @AddIntOption
+PushString "Rect Red"
+GetStaticP1 BodyRectRed
+Push_0
+PushB 255
+Push_1
+Push_1
+Call @AddIntOption
+PushString "Rect Green"
+GetStaticP1 BodyRectGreen
+Push_0
+PushB 255
+Push_1
+Push_1
+Call @AddIntOption
+PushString "Rect Blue"
+GetStaticP1 BodyRectBlue
+Push_0
+PushB 255
+Push_1
+Push_1
+Call @AddIntOption
+PushString "Rect Opacity"
+GetStaticP1 BodyRectOpacity
+Push_0
+PushB 255
+Push_1
+Push_1
+Call @AddIntOption
+Return 0 0
+//<
+
+//> void ScrollerSettings()
+:ScrollerSettings
+Function 0 2
+PushString "Scroller Settings"
+Call @AddTitle
+PushString "Red"
+GetStaticP1 ScrollerRed
+Push_0
+PushB 255
+Push_1
+Push_1
+Call @AddIntOption
+PushString "Green"
+GetStaticP1 ScrollerGreen
+Push_0
+PushB 255
+Push_1
+Push_1
+Call @AddIntOption
+PushString "Blue"
+GetStaticP1 ScrollerBlue
+Push_0
+PushB 255
+Push_1
+Push_1
+Call @AddIntOption
+PushString "Opacity"
+GetStaticP1 ScrollerOpacity
+Push_0
+PushB 255
+Push_1
+Push_1
+Call @AddIntOption
+Return 0 0
+//<
+
+//> void IndicatorSettings()
+:IndicatorSettings
+Function 0 2
+PushString "Indicator Settings"
+Call @AddTitle
+PushString "Red"
+GetStaticP1 IndicatorRed
+Push_0
+PushB 255
+Push_1
+Push_1
+Call @AddIntOption
+PushString "Green"
+GetStaticP1 IndicatorGreen
+Push_0
+PushB 255
+Push_1
+Push_1
+Call @AddIntOption
+PushString "Blue"
+GetStaticP1 IndicatorBlue
+Push_0
+PushB 255
+Push_1
+Push_1
+Call @AddIntOption
+PushString "Opacity"
+GetStaticP1 IndicatorOpacity
+Push_0
+PushB 255
+Push_1
+Push_1
+Call @AddIntOption
+Return 0 0
+//<
+//<
+

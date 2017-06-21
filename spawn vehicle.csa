@@ -1,0 +1,108 @@
+// not working yet
+
+:Car_Spawner_Request_model
+Function 1 2 0
+getF1 0
+CallNative "REQUEST_MODEL" 1 0
+
+
+:Car_Spawn_Id_1
+Function 1 2 0
+PushString "ADDER"
+StaticSet2 100
+StaticGet2 100
+CallNative "GET_HASH_KEY" 1 1
+Call @Car_Spawner_Request_model
+CallNative "NETWORK_IS_SIGNED_IN" 0 1
+JumpFalse @Car_Spawner
+push_0
+CallNative "GET_NUM_RESERVED_MISSION_VEHICLES" 1 1
+Add1 1
+CallNative "RESERVE_NETWORK_MISSION_VEHICLES" 1 0
+
+
+:Car_Spawner
+function  1 2 0
+PushString "adder"
+StaticSet2 101 
+StaticGet2 101
+CallNative "GET_HASH_KEY" 1 1
+CallNative "PLAYER_PED_ID" 0 1
+push_1
+CallNative "GET_ENTITY_COORDS" 2 3
+fPush
+push_1
+push_0
+StaticGet2 101
+CallNative "REQUEST_MODEL" 0 1
+CallNative "CREATE_VEHICLE" 7 1
+StaticSet2 102
+StaticGet2 102
+CallNative "VEH_TO_NET" 1 1
+StaticSet2 103
+StaticGet2 103
+CallNative "SET_NETWORK_ID_EXISTS_ON_ALL_MACHINES" 1 0
+StaticGet2 103
+CallNative "HAS_MODEL_LOADED" 1 0
+JumpFalse @Car_Spawner
+Jump @Car_Spawner_Return
+
+:Car_Spawner_Return
+Return 1 1
+
+
+// working car spawner
+
+:Label_Spawner
+Function 1 2 0
+
+getF1 0
+StaticSet2 161
+StaticGet2 161
+CallNative "GET_HASH_KEY" 1 1
+CallNative "IS_MODEL_VALID" 1 1
+StaticGet2 161
+CallNative "GET_HASH_KEY" 1 1
+Call @Label_Request_Model
+StaticGet2 161
+CallNative "GET_HASH_KEY" 1 1
+CallNative "PLAYER_PED_ID" 0 1
+push_1
+CallNative "GET_ENTITY_COORDS" 2 3
+fPush 1
+push_0
+push_0
+CallNative "CREATE_VEHICLE" 7 1
+StaticSet2 987
+StaticGet2 987
+CallNative "VEH_TO_NET" 1 1
+Drop
+Jump @Label_Return
+
+
+:Label_Request_Model
+Function 1 2 0
+
+getF1 0
+CallNative "REQUEST_MODEL" 1 0
+
+:Has_Model_Loaded_Check
+getF1 0
+CallNative "HAS_MODEL_LOADED" 1 1
+Not
+JumpFalse @Label_Return2
+push_0
+CallNative "WAIT" 1 0
+Jump @Has_Model_Loaded_Check
+
+
+:Label_Return
+Return 1 1
+
+:Label_Return2
+Return 1 0
+
+
+
+
+

@@ -1,0 +1,1748 @@
+Function 0 2 0
+CallNative "NETWORK_SET_SCRIPT_IS_SAFE_FOR_NETWORK_GAME" 0 0
+CallNative "GET_THIS_SCRIPT_NAME" 0 1
+GetHash
+CallNative "UNK_029D3841" 1 1
+push_1
+JumpGT @Label_0
+Call @Label_1
+:Label_0
+Return 0 0
+
+:Label_82
+Function 0 2 0
+push_2
+Push1 181
+CallNative "IS_CONTROL_PRESSED" 2 1
+JumpFalse @Label_2
+push_2
+Push1 179
+CallNative "IS_CONTROL_PRESSED" 2 1
+JumpFalse @Label_2
+PushString "SELECT"
+Call @Label_3
+Push 2407
+StaticSet1 0
+push_0
+StaticSet1 1
+push_1
+StaticSet1 2
+push_0
+CallNative "SETTIMERA" 1 0
+:Label_2
+Return 0 0
+
+:Label_81
+Function 0 2 0
+Call @Label_4
+Call @Label_5
+Call @Label_6
+push_2
+Push1 202
+CallNative "IS_DISABLED_CONTROL_PRESSED" 2 1
+CallNative "TIMERA" 0 1
+StaticGet1 74
+CmpGT
+And
+push_1
+JumpEQ @Label_7
+push_2
+Push1 203
+CallNative "IS_DISABLED_CONTROL_PRESSED" 2 1
+CallNative "TIMERA" 0 1
+StaticGet1 74
+CmpGT
+And
+push_1
+JumpEQ @Label_8
+push_2
+Push1 178
+CallNative "IS_DISABLED_CONTROL_JUST_PRESSED" 2 1
+push_1
+JumpEQ @Label_9
+Jump @Label_10
+:Label_7
+PushString "NAV_UP_DOWN"
+Call @Label_3
+push_0
+CallNative "SETTIMERA" 1 0
+StaticGet1 2
+push_1
+Sub
+Dup
+StaticSet1 2
+push_1
+JumpLT @Label_11
+Jump @Label_10
+:Label_11
+StaticGet1 3
+StaticSet1 2
+Jump @Label_10
+:Label_8
+PushString "NAV_UP_DOWN"
+Call @Label_3
+push_0
+CallNative "SETTIMERA" 1 0
+StaticGet1 2
+Add1 1
+Dup
+StaticSet1 2
+StaticGet1 3
+JumpGT @Label_12
+Jump @Label_10
+:Label_12
+push_1
+StaticSet1 2
+Jump @Label_10
+:Label_9
+PushString "BACK"
+Call @Label_3
+StaticGet1 0
+Push 2407
+JumpEQ @Label_13
+StaticGet1 1
+push_1
+Sub
+StaticSet1 1
+StaticGet1 1
+pStatic1 4
+ArrayGet1 1
+StaticSet1 0
+StaticGet1 1
+pStatic1 14
+ArrayGet1 1
+StaticSet1 2
+Jump @Label_10
+:Label_13
+push_0
+StaticSet1 0
+:Label_10
+Return 0 0
+
+:Label_21
+Function 1 3 0
+StaticGet1 0
+StaticGet1 1
+pStatic1 4
+ArraySet1 1
+StaticGet1 2
+StaticGet1 1
+pStatic1 14
+ArraySet1 1
+push_1
+StaticSet1 2
+getF1 0
+StaticSet1 0
+StaticGet1 1
+Add1 1
+StaticSet1 1
+Return 1 0
+
+:Label_80
+Function 0 2 0
+push_0
+StaticSet1 3
+PushString ""
+StaticSet1 71
+Return 0 0
+
+:Label_19
+Function 1 3 0
+StaticGet1 2
+StaticGet1 3
+JumpNE @Label_14
+getF1 0
+JumpFalse @Label_15
+push_2
+Push1 177
+CallNative "IS_DISABLED_CONTROL_JUST_PRESSED" 2 1
+JumpFalse @Label_14
+:Label_15
+push_1
+Return 1 1
+
+:Label_14
+push_0
+Return 1 1
+
+:Label_87
+Function 0 2 0
+push_2
+Push1 177
+CallNative "IS_DISABLED_CONTROL_JUST_PRESSED" 2 1
+JumpFalse @Label_16
+StaticGet1 2
+Return 0 1
+
+:Label_16
+push_0
+Return 0 1
+
+:Label_28
+Function 1 3 0
+StaticGet1 2
+StaticGet1 3
+JumpNE @Label_17
+getF1 0
+StaticSet1 71
+:Label_17
+Return 1 0
+
+:Label_86
+Function 2 4 0
+getF1 0
+Call @Label_18
+push_1
+Call @Label_19
+JumpFalse @Label_20
+getF1 1
+Call @Label_21
+:Label_20
+Return 2 0
+
+:Label_27
+Function 2 4 0
+getF1 1
+JumpFalse @Label_22
+getF1 0
+PushString ":~g~ On"
+Call @Label_23
+Call @Label_18
+Jump @Label_24
+:Label_22
+getF1 0
+PushString ":~r~ Off"
+Call @Label_23
+Call @Label_18
+:Label_24
+Return 2 0
+
+Function 3 5 0
+getF1 1
+getF1 2
+JumpEQ @Label_25
+getF1 0
+PushString ":~r~ Off"
+Call @Label_23
+Call @Label_18
+Jump @Label_26
+:Label_25
+getF1 0
+PushString ":~g~ On"
+Call @Label_23
+Call @Label_18
+:Label_26
+Return 3 0
+
+Function 3 5 0
+getF1 0
+getF1 1
+CallNative "DOES_SCRIPT_EXIST" 1 1
+getF1 1
+GetHash
+CallNative "UNK_029D3841" 1 1
+push_0
+CmpGT
+And
+Call @Label_27
+getF1 2
+Call @Label_28
+Return 3 0
+
+:Label_41
+Function 6 8 0
+getF1 0
+PushString ": "
+Call @Label_23
+getF1 1
+pGet
+Call @Label_29
+Call @Label_18
+push_0
+Call @Label_19
+JumpFalse @Label_30
+push_2
+Push1 204
+getF1 5
+JumpFalse @Label_31
+CallNative "IS_DISABLED_CONTROL_PRESSED" 2 1
+push_1
+JumpEQ @Label_32
+Jump @Label_33
+:Label_31
+CallNative "IS_DISABLED_CONTROL_JUST_PRESSED" 2 1
+push_1
+JumpEQ @Label_32
+:Label_33
+push_2
+Push1 205
+getF1 5
+JumpFalse @Label_34
+CallNative "IS_DISABLED_CONTROL_PRESSED" 2 1
+push_1
+JumpEQ @Label_35
+Jump @Label_36
+:Label_34
+CallNative "IS_DISABLED_CONTROL_JUST_PRESSED" 2 1
+push_1
+JumpEQ @Label_35
+Jump @Label_36
+:Label_32
+PushString "NAV_UP_DOWN"
+Call @Label_3
+getF1 1
+pGet
+push_1
+Sub
+getF1 2
+JumpLT @Label_37
+getF1 1
+pGet
+push_1
+Sub
+getF1 1
+pSet
+Jump @Label_36
+:Label_37
+getF1 3
+getF1 1
+pSet
+Jump @Label_36
+:Label_35
+PushString "NAV_UP_DOWN"
+Call @Label_3
+getF1 1
+pGet
+Add1 1
+getF1 3
+JumpGT @Label_38
+getF1 1
+pGet
+Add1 1
+getF1 1
+pSet
+Jump @Label_36
+:Label_38
+getF1 2
+getF1 1
+pSet
+:Label_36
+getF1 4
+JumpFalse @Label_30
+push_0
+Call @Label_19
+JumpFalse @Label_30
+push_2
+Push1 179
+CallNative "IS_DISABLED_CONTROL_PRESSED" 2 1
+JumpFalse @Label_30
+getF1 1
+pGet
+Call @Label_39
+getF1 3
+Call @Label_39
+CallNative "GET_LENGTH_OF_LITERAL_STRING" 1 1
+Add1 1
+Call @Label_40
+getF1 1
+pSet
+:Label_30
+Return 6 0
+
+Function 7 10 0
+getF1 1
+pGet
+setF1 9
+getF1 0
+getF1 1
+getF1 2
+getF1 3
+getF1 4
+getF1 5
+Call @Label_41
+push_0
+Call @Label_19
+JumpFalse @Label_42
+getF1 1
+pGet
+getF1 9
+JumpNE @Label_43
+Jump @Label_42
+:Label_43
+getF1 6
+pCall
+:Label_42
+Return 7 0
+
+:Label_53
+Function 7 25 0
+getF1 0
+pFrame1 9
+StrCopy 32
+PushString ": "
+pFrame1 9
+StrAdd 32
+getF1 1
+pGet
+getF1 5
+Call @Label_44
+pFrame1 17
+StrCopy 32
+pFrame1 9
+pFrame1 17
+Call @Label_23
+Call @Label_18
+push_0
+Call @Label_19
+JumpFalse @Label_45
+push_2
+Push1 204
+getF1 6
+JumpFalse @Label_46
+CallNative "IS_DISABLED_CONTROL_PRESSED" 2 1
+push_1
+JumpEQ @Label_47
+Jump @Label_48
+:Label_46
+CallNative "IS_DISABLED_CONTROL_JUST_PRESSED" 2 1
+push_1
+JumpEQ @Label_47
+:Label_48
+push_2
+Push1 205
+getF1 6
+JumpFalse @Label_49
+CallNative "IS_DISABLED_CONTROL_PRESSED" 2 1
+push_1
+JumpEQ @Label_50
+Jump @Label_45
+:Label_49
+CallNative "IS_DISABLED_CONTROL_JUST_PRESSED" 2 1
+push_1
+JumpEQ @Label_50
+Jump @Label_45
+:Label_47
+PushString "NAV_UP_DOWN"
+Call @Label_3
+getF1 1
+pGet
+getF1 4
+fSub
+getF1 2
+JumpLT @Label_51
+getF1 1
+pGet
+getF1 4
+fSub
+getF1 1
+pSet
+Jump @Label_45
+:Label_51
+getF1 3
+getF1 1
+pSet
+Jump @Label_45
+:Label_50
+PushString "NAV_UP_DOWN"
+Call @Label_3
+getF1 1
+pGet
+getF1 4
+fAdd
+getF1 3
+JumpGT @Label_52
+getF1 1
+pGet
+getF1 4
+fAdd
+getF1 1
+pSet
+Jump @Label_45
+:Label_52
+getF1 2
+getF1 1
+pSet
+:Label_45
+Return 7 0
+
+Function 8 11 0
+getF1 1
+pGet
+setF1 10
+getF1 0
+getF1 1
+getF1 2
+getF1 3
+getF1 4
+getF1 5
+getF1 6
+Call @Label_53
+push_0
+Call @Label_19
+JumpFalse @Label_54
+getF1 1
+pGet
+getF1 10
+JumpNE @Label_55
+Jump @Label_54
+:Label_55
+getF1 7
+pCall
+:Label_54
+Return 7 0
+
+:Label_106
+Function 1 3 0
+getF1 0
+CallNative "NETWORK_IS_PLAYER_CONNECTED" 1 1
+JumpFalse @Label_56
+getF1 0
+CallNative "GET_PLAYER_NAME" 1 1
+Call @Label_18
+push_1
+Call @Label_19
+JumpFalse @Label_57
+StaticGet1 2
+push_1
+Sub
+StaticSet1 70
+Push 3341
+Call @Label_21
+Jump @Label_57
+:Label_56
+PushString "Not Connected"
+Call @Label_18
+:Label_57
+Return 1 0
+
+:Label_117
+Function 0 2 0
+StaticGet1 29
+fPush 0.14499999582767
+JumpEQ @Label_58
+PushString "Menu Side:~G~ Left"
+Call @Label_18
+Jump @Label_59
+:Label_58
+PushString "Menu Side:~G~ Right"
+Call @Label_18
+:Label_59
+Return 0 0
+
+:Label_3
+Function 1 3 0
+StaticGet1 69
+JumpFalse @Label_60
+push_-1
+getF1 0
+PushString "HUD_FRONTEND_DEFAULT_SOUNDSET"
+CallNative "PLAY_SOUND_FRONTEND" 3 0
+:Label_60
+Return 1 0
+
+:Label_4
+Function 0 2 0
+CallNative "HIDE_HELP_TEXT_THIS_FRAME" 0 0
+push_0
+CallNative "SET_CINEMATIC_BUTTON_ACTIVE" 1 0
+Push1 10
+CallNative "HIDE_HUD_COMPONENT_THIS_FRAME" 1 0
+push_6
+CallNative "HIDE_HUD_COMPONENT_THIS_FRAME" 1 0
+push_7
+CallNative "HIDE_HUD_COMPONENT_THIS_FRAME" 1 0
+Push1 9
+CallNative "HIDE_HUD_COMPONENT_THIS_FRAME" 1 0
+Push1 8
+CallNative "HIDE_HUD_COMPONENT_THIS_FRAME" 1 0
+push_0
+Push1 19
+CallNative "DISABLE_CONTROL_ACTION" 2 0
+push_0
+Push1 20
+CallNative "DISABLE_CONTROL_ACTION" 2 0
+push_0
+Push1 21
+CallNative "DISABLE_CONTROL_ACTION" 2 0
+push_0
+Push1 27
+CallNative "DISABLE_CONTROL_ACTION" 2 0
+push_0
+Push1 54
+CallNative "DISABLE_CONTROL_ACTION" 2 0
+push_0
+Push1 123
+CallNative "DISABLE_CONTROL_ACTION" 2 0
+push_0
+Push1 124
+CallNative "DISABLE_CONTROL_ACTION" 2 0
+push_0
+Push1 125
+CallNative "DISABLE_CONTROL_ACTION" 2 0
+push_0
+Push1 126
+CallNative "DISABLE_CONTROL_ACTION" 2 0
+push_0
+Push1 138
+CallNative "DISABLE_CONTROL_ACTION" 2 0
+push_0
+Push1 139
+CallNative "DISABLE_CONTROL_ACTION" 2 0
+push_0
+Push1 140
+CallNative "DISABLE_CONTROL_ACTION" 2 0
+push_2
+Push1 177
+CallNative "DISABLE_CONTROL_ACTION" 2 0
+push_2
+Push1 178
+CallNative "DISABLE_CONTROL_ACTION" 2 0
+push_2
+Push1 179
+CallNative "DISABLE_CONTROL_ACTION" 2 0
+push_0
+Push1 207
+CallNative "DISABLE_CONTROL_ACTION" 2 0
+push_2
+Push1 166
+CallNative "SET_INPUT_EXCLUSIVE" 2 0
+push_2
+Push1 167
+CallNative "SET_INPUT_EXCLUSIVE" 2 0
+push_2
+Push1 177
+CallNative "SET_INPUT_EXCLUSIVE" 2 0
+push_2
+Push1 178
+CallNative "SET_INPUT_EXCLUSIVE" 2 0
+push_2
+Push1 202
+CallNative "SET_INPUT_EXCLUSIVE" 2 0
+push_2
+Push1 203
+CallNative "SET_INPUT_EXCLUSIVE" 2 0
+Return 0 0
+
+:Label_39
+Function 1 3 0
+PushString ""
+StaticSet1 43
+getF1 0
+pStatic1 43
+ItoS 64
+pStatic1 43
+Return 1 1
+
+Function 1 4 0
+getF1 0
+pFrame1 3
+CallNative "STRING_TO_INT" 2 1
+Drop
+getF1 3
+Return 1 1
+
+:Label_23
+Function 2 4 0
+getF1 0
+pStatic1 43
+StrCopy 32
+getF1 1
+pStatic1 43
+StrAdd 32
+pStatic1 43
+Return 2 1
+
+:Label_29
+Function 2 4 0
+getF1 0
+pStatic1 43
+StrCopy 32
+getF1 1
+pStatic1 43
+StrAddi 32
+pStatic1 43
+Return 2 1
+
+:Label_44
+Function 2 18 0
+getF1 0
+FtoI
+setF1 4
+PushString ""
+pStatic1 43
+StrCopy 64
+getF1 4
+pStatic1 43
+ItoS 64
+PushString "."
+pStatic1 43
+StrAdd 64
+getF1 0
+getF1 4
+ItoF
+fSub
+CallNative "ABSF" 1 1
+fPush 10
+getF1 1
+ItoF
+CallNative "POW" 2 1
+fMul
+FtoI
+setF1 5
+getF1 5
+pFrame1 8
+ItoS 32
+getF1 1
+pFrame1 8
+CallNative "GET_LENGTH_OF_LITERAL_STRING" 1 1
+Sub
+Dup
+setF1 7
+push_0
+JumpLE @Label_61
+push_0
+setF1 6
+:Label_62
+getF1 6
+getF1 7
+JumpGE @Label_61
+PushString "0"
+pStatic1 43
+StrAdd 64
+getF1 6
+Add1 1
+setF1 6
+Jump @Label_62
+:Label_61
+pFrame1 8
+pStatic1 43
+StrAdd 64
+pStatic1 43
+Return 2 1
+
+:Label_40
+Function 2 4 0
+push_0
+PushString "FMMC_KEY_TIP8"
+PushString ""
+getF1 0
+PushString ""
+PushString ""
+PushString ""
+getF1 1
+CallNative "DISPLAY_ONSCREEN_KEYBOARD" 8 0
+Push1 100
+CallNative "WAIT" 1 0
+:Label_64
+push_0
+CallNative "WAIT" 1 0
+CallNative "IS_SYSTEM_UI_BEING_DISPLAYED" 0 1
+JumpFalse @Label_63
+Jump @Label_64
+:Label_63
+CallNative "GET_ONSCREEN_KEYBOARD_RESULT" 0 1
+Return 2 1
+
+:Label_5
+Function 0 4 0
+StaticGet1 3
+StaticGet1 28
+JumpGT @Label_65
+StaticGet1 3
+setF1 2
+StaticGet1 2
+setF1 3
+Jump @Label_66
+:Label_65
+StaticGet1 28
+Dup
+setF1 2
+setF1 3
+StaticGet1 2
+StaticGet1 28
+JumpGT @Label_66
+StaticGet1 2
+setF1 3
+:Label_66
+StaticGet1 29
+getF1 2
+ItoF
+fPush 0.035000000149012
+fMul
+fPush_2.0
+fDiv
+fPush 0.15899999439716
+fAdd
+fPush 0.18999999761581
+getF1 2
+ItoF
+fPush 0.035000000149012
+fMul
+StaticGet1 31
+StaticGet1 32
+StaticGet1 33
+StaticGet1 34
+CallNative "DRAW_RECT" 8 0
+StaticGet1 29
+getF1 3
+ItoF
+fPush 0.035000000149012
+fMul
+fPush 0.1414999961853
+fAdd
+fPush 0.18999999761581
+fPush 0.035000000149012
+StaticGet1 35
+StaticGet1 36
+StaticGet1 37
+StaticGet1 38
+CallNative "DRAW_RECT" 8 0
+StaticGet1 29
+fPush 0.11749999970198
+fPush 0.18999999761581
+fPush 0.082999996840954
+StaticGet1 24
+StaticGet1 25
+StaticGet1 26
+StaticGet1 27
+CallNative "DRAW_RECT" 8 0
+StaticGet1 3
+StaticGet1 28
+JumpLE @Label_67
+StaticGet1 2
+StaticGet1 28
+JumpLE @Label_68
+StaticGet1 29
+fPush 0.15600000321865
+fPush 0.18999999761581
+fPush 0.0049999998882413
+StaticGet1 39
+StaticGet1 40
+StaticGet1 41
+StaticGet1 42
+CallNative "DRAW_RECT" 8 0
+:Label_68
+StaticGet1 2
+StaticGet1 3
+JumpEQ @Label_67
+StaticGet1 29
+StaticGet1 28
+ItoF
+fPush 0.035000000149012
+fMul
+fPush 0.16099999845028
+fAdd
+fPush 0.18999999761581
+fPush 0.0049999998882413
+StaticGet1 39
+StaticGet1 40
+StaticGet1 41
+StaticGet1 42
+CallNative "DRAW_RECT" 8 0
+:Label_67
+Return 0 0
+
+:Label_69
+Function 0 2 0
+push_0
+CallNative "SET_TEXT_FONT" 1 0
+fPush 0.40000000596046
+fPush 0.40000000596046
+CallNative "SET_TEXT_SCALE" 2 0
+Push1 255
+Push1 255
+Push1 255
+Push1 255
+CallNative "SET_TEXT_COLOUR" 4 0
+fPush_0.0
+fPush_1.0
+CallNative "SET_TEXT_WRAP" 2 0
+push_0
+CallNative "SET_TEXT_CENTRE" 1 0
+push_0
+push_0
+push_0
+push_0
+push_0
+CallNative "SET_TEXT_DROPSHADOW" 5 0
+push_0
+push_0
+push_0
+push_0
+push_0
+CallNative "SET_TEXT_EDGE" 5 0
+CallNative "SET_TEXT_OUTLINE" 0 0
+Return 0 0
+
+:Label_85
+Function 1 3 0
+Call @Label_69
+StaticGet1 63
+CallNative "SET_TEXT_FONT" 1 0
+StaticGet1 59
+StaticGet1 60
+StaticGet1 61
+StaticGet1 62
+CallNative "SET_TEXT_COLOUR" 4 0
+fPush 0.75
+fPush 0.75
+CallNative "SET_TEXT_SCALE" 2 0
+push_1
+CallNative "SET_TEXT_CENTRE" 1 0
+PushString "STRING"
+CallNative "UNK_3E35563E" 1 0
+getF1 0
+CallNative "UNK_27A244D8" 1 0
+StaticGet1 29
+fPush 0.10000000149012
+CallNative "UNK_6F8350CE" 2 0
+Return 1 0
+
+:Label_18
+Function 1 4 0
+StaticGet1 3
+Add1 1
+StaticSet1 3
+StaticGet1 2
+StaticGet1 28
+JumpLE @Label_70
+StaticGet1 3
+StaticGet1 2
+StaticGet1 28
+push_1
+Sub
+Sub
+JumpLT @Label_71
+StaticGet1 3
+StaticGet1 2
+JumpGT @Label_71
+StaticGet1 3
+StaticGet1 2
+StaticGet1 28
+Sub
+Sub
+ItoF
+fPush 0.035000000149012
+fMul
+fPush 0.125
+fAdd
+setF1 3
+Jump @Label_72
+:Label_70
+StaticGet1 3
+StaticGet1 28
+JumpGT @Label_71
+StaticGet1 3
+ItoF
+fPush 0.035000000149012
+fMul
+fPush 0.125
+fAdd
+setF1 3
+:Label_72
+Call @Label_69
+StaticGet1 68
+CallNative "SET_TEXT_FONT" 1 0
+StaticGet1 64
+StaticGet1 65
+StaticGet1 66
+StaticGet1 67
+CallNative "SET_TEXT_COLOUR" 4 0
+PushString "STRING"
+CallNative "UNK_3E35563E" 1 0
+getF1 0
+CallNative "UNK_27A244D8" 1 0
+StaticGet1 30
+getF1 3
+CallNative "UNK_6F8350CE" 2 0
+:Label_71
+Return 1 0
+
+:Label_111
+Function 1 3 0
+PushString "STRING"
+CallNative "UNK_F42C43C7" 1 0
+getF1 0
+CallNative "UNK_27A244D8" 1 0
+PushS 3000
+push_1
+CallNative "UNK_38F82261" 2 0
+Return 1 0
+
+:Label_6
+Function 0 3 0
+StaticGet1 71
+CallNative "IS_STRING_NULL_OR_EMPTY" 1 1
+push_1
+JumpEQ @Label_73
+StaticGet1 3
+StaticGet1 28
+JumpGT @Label_74
+StaticGet1 3
+Add1 1
+setF1 2
+Jump @Label_75
+:Label_74
+StaticGet1 28
+Add1 1
+setF1 2
+:Label_75
+Call @Label_69
+StaticGet1 68
+CallNative "SET_TEXT_FONT" 1 0
+fPush 0.34999999403954
+fPush 0.34999999403954
+CallNative "SET_TEXT_SCALE" 2 0
+StaticGet1 64
+StaticGet1 65
+StaticGet1 66
+StaticGet1 67
+CallNative "SET_TEXT_COLOUR" 4 0
+push_1
+CallNative "SET_TEXT_CENTRE" 1 0
+PushString "STRING"
+CallNative "UNK_3E35563E" 1 0
+StaticGet1 71
+CallNative "UNK_27A244D8" 1 0
+StaticGet1 29
+getF1 2
+ItoF
+fPush 0.035000000149012
+fMul
+fPush 0.125
+fAdd
+CallNative "UNK_6F8350CE" 2 0
+StaticGet1 29
+getF1 2
+ItoF
+fPush 0.035000000149012
+fMul
+fPush 0.1414999961853
+fAdd
+fPush 0.18999999761581
+fPush 0.035000000149012
+StaticGet1 24
+StaticGet1 25
+StaticGet1 26
+StaticGet1 27
+CallNative "DRAW_RECT" 8 0
+:Label_73
+Return 0 0
+
+:Label_1
+Function 0 2 0
+:Label_78
+push_0
+CallNative "WAIT" 1 0
+Call @Label_76
+Call @Label_77
+CallNative "IS_PAUSE_MENU_ACTIVE" 0 1
+push_1
+JumpEQ @Label_78
+StaticGet1 0
+JumpFalse @Label_79
+Call @Label_80
+StaticGet1 0
+pCall
+Call @Label_81
+Jump @Label_78
+:Label_79
+Call @Label_82
+Jump @Label_78
+Return 0 0
+
+:Label_77
+Function 0 2 0
+StaticGet1 72
+JumpFalse @Label_83
+CallNative "PLAYER_ID" 0 1
+CallNative "SET_SUPER_JUMP_THIS_FRAME" 1 0
+:Label_83
+StaticGet1 73
+JumpFalse @Label_84
+CallNative "PLAYER_ID" 0 1
+CallNative "SET_EXPLOSIVE_AMMO_THIS_FRAME" 1 0
+:Label_84
+Return 0 0
+
+Function 0 2 0
+PushString "Jarvis Menu"
+Call @Label_85
+PushString "Script Menu`s"
+Push 2973
+Call @Label_86
+PushString "Load Scripts like a modloader"
+Call @Label_28
+PushString "Online Players"
+Push 3304
+Call @Label_86
+PushString "Jarvis Online Players Options"
+Call @Label_28
+PushString "Player"
+Push 3459
+Call @Label_86
+PushString "Jarvis Self Options"
+Call @Label_28
+PushString "Teleport"
+Push 2522
+Call @Label_86
+PushString "Jarvis Teleport Service"
+Call @Label_28
+PushString "Settings"
+Push 3640
+Call @Label_86
+PushString "Jarvis Menu Settings"
+Call @Label_28
+Return 0 0
+
+Function 0 2 0
+PushString "Jarvis Teleport"
+Call @Label_85
+PushString "MazeBank"
+Call @Label_18
+PushString "Teleports to Mazebank"
+Call @Label_28
+PushString "Airport"
+Call @Label_18
+PushString "Teleports to Airport"
+Call @Label_28
+PushString "Trevors Airport"
+Call @Label_18
+PushString "Teleports to Trevors Airport"
+Call @Label_28
+PushString "Fort Zancudo"
+Call @Label_18
+PushString "Teleports to Fort Zancudo"
+Call @Label_28
+Call @Label_87
+PushString "Teleport 2"
+Push 2653
+Call @Label_86
+PushString "Jarvis Teleport page 2"
+Call @Label_28
+Switch [1=@Label_88][2=@Label_89][3=@Label_90][4=@Label_91]
+Return 0 0
+
+Function 0 2 0
+PushString "Jarvis Teleport 2"
+Call @Label_85
+PushString "MazeBank"
+Call @Label_18
+PushString "Teleports to :~r~ Mazebank"
+Call @Label_28
+PushString "Airport"
+Call @Label_18
+PushString "Teleports to :~r~ Airport"
+Call @Label_28
+PushString "Trevors Airfield"
+Call @Label_18
+PushString "Teleports to :~r~ Trevors Airfield"
+Call @Label_28
+PushString "Fort Zancudo"
+Call @Label_18
+PushString "Teleports to :~r~ Fort Zancudo"
+Call @Label_28
+Call @Label_87
+Switch [1=@Label_88][2=@Label_89][3=@Label_90][4=@Label_91]
+Return 0 0
+
+:Label_88
+fPush -74.5
+fPush -818
+fPush 326.5
+Call @Label_92
+PushString "Jarvis Teleported to :~b~Maze Bank!"
+Call @Label_93
+Jump @Label_94
+:Label_89
+fPush -1102.291015625
+fPush -2894.5161132812
+fPush 13.94670009613
+Call @Label_92
+PushString "Jarvis Teleported to :~b~ The Airport!"
+Call @Label_93
+Jump @Label_94
+:Label_90
+fPush 1741.4959716797
+fPush 3269.2570800781
+fPush 41.601398468018
+Call @Label_92
+PushString "Jarvis Teleported to :~b~Trevors Air field!"
+Call @Label_93
+Jump @Label_94
+:Label_91
+fPush -2012.8470458984
+fPush 2956.5270996094
+fPush 32.81010055542
+Call @Label_92
+PushString "Jarvis Teleported to :~b~Fort Zancudo!"
+Call @Label_93
+Jump @Label_94
+:Label_93
+Function 1 3 0
+PushString "STRING"
+CallNative "UNK_F665A7FA" 1 0
+getF1 0
+CallNative "UNK_98073466" 1 0
+push_0
+push_1
+CallNative "UNK_C7673956" 2 1
+Drop
+Return 1 0
+
+:Label_92
+Function 3 5 0
+CallNative "UNK_3E7DA045" 0 1
+CallNative "UNK_48AFA016" 1 1
+JumpFalse @Label_95
+CallNative "UNK_3E7DA045" 0 1
+CallNative "UNK_88D46281" 1 1
+getF1 0
+getF1 1
+getF1 2
+push_1
+push_0
+push_0
+push_1
+CallNative "UNK_0E44F439" 8 0
+Jump @Label_94
+:Label_95
+CallNative "UNK_3E7DA045" 0 1
+getF1 0
+getF1 1
+getF1 2
+push_1
+push_0
+push_0
+push_1
+CallNative "UNK_0E44F439" 8 0
+:Label_94
+Return 3 0
+
+Function 0 2 0
+PushString "Jarvis Modloader"
+Call @Label_85
+PushString "customscript1"
+StaticGet1 75
+Call @Label_96
+PushString "Opens with ~r~ L4 + R4!"
+Call @Label_28
+PushString "customscript2"
+StaticGet1 76
+Call @Label_97
+PushString "Opens with ~r~ L4 + R4!"
+Call @Label_28
+PushString "customscript3"
+Push 3214
+Call @Label_27
+PushString "Opens with ~r~ L4 + R4!"
+Call @Label_28
+PushString "customscript4"
+Push 3221
+Call @Label_27
+PushString "Opens with ~r~ L4 + R4!"
+Call @Label_28
+PushString "customscript5"
+Push 3228
+Call @Label_27
+PushString "Opens with ~r~ L4 + R4!"
+Call @Label_28
+PushString "customscript6"
+Push 3235
+Call @Label_27
+PushString "Opens with ~r~ L4 + R4!"
+Call @Label_28
+PushString "customscript7"
+Push 3246
+Call @Label_27
+PushString "Opens with ~r~ L4 + R4!"
+Call @Label_28
+PushString "customscript8n"
+PushString "customscript8"
+PushString "Opens with ~r~ L4 + R4!"
+Call @Label_98
+Call @Label_87
+Switch [1=@Label_96][2=@Label_97][3=@Label_99][4=@Label_100][5=@Label_101][6=@Label_102][7=@Label_103][8=@Label_104]
+Return 0 0
+
+:Label_96
+PushString "rock_menu1"
+Jump @Label_105
+:Label_97
+PushString "dark_horse"
+Jump @Label_105
+:Label_99
+PushString "console_trainer_v"
+Jump @Label_105
+:Label_100
+PushString "spawnerr3r"
+Jump @Label_105
+:Label_101
+PushString "spawnerrr"
+Jump @Label_105
+:Label_102
+PushString "garage_editor"
+Call @Label_76
+Jump @Label_105
+:Label_103
+PushString "script_injector"
+Jump @Label_105
+:Label_104
+PushString "jarvismegamodmenu"
+Jump @Label_105
+:Label_105
+StaticSet1 78
+push_1
+StaticSet1 77
+Return 0 0
+
+:Label_98
+Function 3 5 0
+getF1 0
+getF1 1
+CallNative "DOES_SCRIPT_EXIST" 1 1
+getF1 1
+GetHash
+CallNative "UNK_029D3841" 1 1
+push_0
+CmpGT
+And
+Call @Label_27
+getF1 2
+Call @Label_28
+Return 3 0
+
+Function 0 3 0
+PushString "Players List"
+Call @Label_85
+push_0
+setF1 2
+:Label_107
+getF1 2
+Call @Label_106
+getF1 2
+Add1 1
+Dup
+setF1 2
+Push1 18
+JumpLT @Label_107
+Return 0 0
+
+Function 0 2 0
+StaticGet1 70
+CallNative "GET_PLAYER_NAME" 1 1
+Call @Label_85
+PushString "Explode"
+Call @Label_18
+PushString "Teleport To Player"
+Call @Label_18
+Call @Label_87
+Switch [1=@Label_108][2=@Label_109]
+Jump @Label_110
+:Label_108
+StaticGet1 70
+CallNative "GET_PLAYER_PED" 1 1
+push_0
+CallNative "GET_ENTITY_COORDS" 2 3
+Push1 29
+fPush_1.0
+push_1
+push_0
+fPush_1.0
+CallNative "ADD_EXPLOSION" 8 0
+PushString "Player Exploded!"
+Call @Label_111
+Jump @Label_110
+:Label_109
+CallNative "PLAYER_PED_ID" 0 1
+StaticGet1 70
+CallNative "GET_PLAYER_PED" 1 1
+push_0
+CallNative "GET_ENTITY_COORDS" 2 3
+push_1
+push_0
+push_0
+push_1
+CallNative "SET_ENTITY_COORDS" 8 0
+PushString "Teleported To Player!"
+Call @Label_111
+:Label_110
+Return 0 0
+
+Function 0 2 0
+PushString "Self Options"
+Call @Label_85
+PushString "Godmode"
+CallNative "PLAYER_ID" 0 1
+CallNative "GET_PLAYER_INVINCIBLE" 1 1
+Call @Label_27
+PushString "Invisibility"
+CallNative "PLAYER_PED_ID" 0 1
+CallNative "IS_ENTITY_VISIBLE" 1 1
+Not
+Call @Label_27
+PushString "Super Jump"
+StaticGet1 72
+Call @Label_27
+PushString "Explosive Bullets"
+StaticGet1 73
+Call @Label_27
+Call @Label_87
+Switch [1=@Label_112][2=@Label_113][3=@Label_114][4=@Label_115]
+Jump @Label_116
+:Label_112
+CallNative "PLAYER_ID" 0 1
+Dup
+CallNative "GET_PLAYER_INVINCIBLE" 1 1
+Not
+CallNative "SET_PLAYER_INVINCIBLE" 2 0
+PushString "Godmode Toggled!"
+Call @Label_111
+Jump @Label_116
+:Label_113
+CallNative "PLAYER_PED_ID" 0 1
+Dup
+CallNative "IS_ENTITY_VISIBLE" 1 1
+Not
+CallNative "SET_ENTITY_VISIBLE" 2 0
+PushString "Invisibility Toggled!"
+Call @Label_111
+Jump @Label_116
+:Label_114
+StaticGet1 72
+Not
+StaticSet1 72
+PushString "Super Jump Toggled!"
+Call @Label_111
+Jump @Label_116
+:Label_115
+StaticGet1 73
+Not
+StaticSet1 73
+PushString "Explosive Bullets Toggled!"
+Call @Label_111
+:Label_116
+Return 0 0
+
+Function 0 2 0
+PushString "Jarvis Settings"
+Call @Label_85
+PushString "Banner"
+Push 3824
+Call @Label_86
+PushString "Body"
+Push 3974
+Call @Label_86
+PushString "Scroller"
+Push 4124
+Call @Label_86
+PushString "Indicator"
+Push 4200
+Call @Label_86
+PushString "Sounds"
+StaticGet1 69
+Call @Label_27
+Call @Label_117
+PushString "Max Options"
+pStatic1 28
+push_1
+Push1 20
+push_0
+push_0
+Call @Label_41
+PushString "Scroll Delay"
+pStatic1 74
+Push1 10
+PushS 400
+push_0
+push_1
+Call @Label_41
+Call @Label_87
+Switch [5=@Label_118][6=@Label_119]
+Jump @Label_120
+:Label_118
+StaticGet1 69
+Not
+StaticSet1 69
+Jump @Label_120
+:Label_119
+StaticGet1 29
+fPush 0.84500002861023
+JumpEQ @Label_121
+fPush 0.84500002861023
+StaticSet1 29
+fPush 0.75999999046326
+StaticSet1 30
+Jump @Label_120
+:Label_121
+fPush 0.14499999582767
+StaticSet1 29
+fPush 0.059999998658895
+StaticSet1 30
+:Label_120
+Return 0 0
+
+Function 0 2 0
+PushString "Banner Settings"
+Call @Label_85
+PushString "Text Red"
+pStatic1 59
+push_0
+Push1 255
+push_1
+push_1
+Call @Label_41
+PushString "Text Green"
+pStatic1 60
+push_0
+Push1 255
+push_1
+push_1
+Call @Label_41
+PushString "Text Blue"
+pStatic1 61
+push_0
+Push1 255
+push_1
+push_1
+Call @Label_41
+PushString "Text Opacity"
+pStatic1 62
+push_0
+Push1 255
+push_1
+push_1
+Call @Label_41
+PushString "Text Font"
+pStatic1 63
+push_0
+push_7
+push_0
+push_0
+Call @Label_41
+PushString "Rect Red"
+pStatic1 24
+push_0
+Push1 255
+push_1
+push_1
+Call @Label_41
+PushString "Rect Green"
+pStatic1 25
+push_0
+Push1 255
+push_1
+push_1
+Call @Label_41
+PushString "Rect Blue"
+pStatic1 26
+push_0
+Push1 255
+push_1
+push_1
+Call @Label_41
+PushString "Rect Opacity"
+pStatic1 27
+push_0
+Push1 255
+push_1
+push_1
+Call @Label_41
+Return 0 0
+
+Function 0 2 0
+PushString "Body Settings"
+Call @Label_85
+PushString "Text Red"
+pStatic1 64
+push_0
+Push1 255
+push_1
+push_1
+Call @Label_41
+PushString "Text Green"
+pStatic1 65
+push_0
+Push1 255
+push_1
+push_1
+Call @Label_41
+PushString "Text Blue"
+pStatic1 66
+push_0
+Push1 255
+push_1
+push_1
+Call @Label_41
+PushString "Text Opacity"
+pStatic1 67
+push_0
+Push1 255
+push_1
+push_1
+Call @Label_41
+PushString "Text Font"
+pStatic1 68
+push_0
+push_7
+push_0
+push_0
+Call @Label_41
+PushString "Rect Red"
+pStatic1 31
+push_0
+Push1 255
+push_1
+push_1
+Call @Label_41
+PushString "Rect Green"
+pStatic1 32
+push_0
+Push1 255
+push_1
+push_1
+Call @Label_41
+PushString "Rect Blue"
+pStatic1 33
+push_0
+Push1 255
+push_1
+push_1
+Call @Label_41
+PushString "Rect Opacity"
+pStatic1 34
+push_0
+Push1 255
+push_1
+push_1
+Call @Label_41
+Return 0 0
+
+Function 0 2 0
+PushString "Scroller Settings"
+Call @Label_85
+PushString "Red"
+pStatic1 35
+push_0
+Push1 255
+push_1
+push_1
+Call @Label_41
+PushString "Green"
+pStatic1 36
+push_0
+Push1 255
+push_1
+push_1
+Call @Label_41
+PushString "Blue"
+pStatic1 37
+push_0
+Push1 255
+push_1
+push_1
+Call @Label_41
+PushString "Opacity"
+pStatic1 38
+push_0
+Push1 255
+push_1
+push_1
+Call @Label_41
+Return 0 0
+
+Function 0 2 0
+PushString "Indicator Settings"
+Call @Label_85
+PushString "Red"
+pStatic1 39
+push_0
+Push1 255
+push_1
+push_1
+Call @Label_41
+PushString "Green"
+pStatic1 40
+push_0
+Push1 255
+push_1
+push_1
+Call @Label_41
+PushString "Blue"
+pStatic1 41
+push_0
+Push1 255
+push_1
+push_1
+Call @Label_41
+PushString "Opacity"
+pStatic1 42
+push_0
+Push1 255
+push_1
+push_1
+Call @Label_41
+Return 0 0
+
+:Label_76
+Function 0 2 0
+StaticGet1 77
+push_0
+JumpEQ @Label_122
+StaticGet1 77
+push_2
+JumpEQ @Label_123
+StaticGet1 78
+CallNative "UNK_7C71921C" 1 1
+JumpFalse @Label_124
+StaticGet1 78
+GetHash
+CallNative "UNK_62B62946" 1 1
+push_0
+JumpEQ @Label_125
+StaticGet1 78
+CallNative "UNK_F159DC9D" 1 0
+push_0
+StaticSet1 77
+:Label_122
+Return 0 0
+
+:Label_125
+StaticGet1 78
+CallNative "UNK_7AEFAF64" 1 0
+push_2
+StaticSet1 77
+:Label_123
+StaticGet1 78
+CallNative "UNK_69C07C96" 1 1
+push_1
+JumpEQ @Label_126
+Return 0 0
+
+:Label_126
+StaticGet1 78
+PushS 1024
+CallNative "UNK_850AE7FA" 2 1
+Drop
+push_0
+StaticSet1 77
+Return 0 0
+
+:Label_124
+push_0
+StaticSet1 77
+PushString "~r~Script not found."
+Call @Label_127
+Return 0 0
+
+:Label_127
+Function 1 3 0
+PushString "STRING"
+CallNative "UNK_958A78F3" 1 0
+getF1 0
+CallNative "UNK_98073466" 1 0
+PushS 5000
+push_1
+CallNative "UNK_1C357046" 2 0
+Return 0 0
+
