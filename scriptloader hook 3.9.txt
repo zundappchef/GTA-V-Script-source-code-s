@@ -1,0 +1,60 @@
+:callcustomscript1
+Function 0 2 0
+PushString "customscriptname1"
+Call @check_script
+Return 0 0
+
+:callcustomscript2
+Function 0 2 0
+PushString "kkdarkhorse"
+Call @check_script
+Return 0 0
+
+:callcustomscript3
+Function 0 2 0
+PushString "rockedcar"
+Call @check_script
+Return 0 0
+
+:check_script
+Function 1 3
+GetFrame1 0
+GetHash
+CallNative unk_0x029D3841 1 1
+push_0
+JumpNE @ifscript_exists
+GetFrame1 0
+Call @loadscript
+return 1 0
+
+:ifscript_exists
+Push_1 
+CallNative unk_0x4B37333C 1 1
+JumpFalse @terminate_script
+CallNative terminate_this_thread 0 0
+
+:terminate_script
+GetFrame1 0
+CallNative terminate_all_scripts_with_this_name 1 0
+Return 1 0
+
+:loadscript
+Function 1 3
+GetFrame1 0
+CallNative request_script 1 0
+
+:loadscript_loop
+GetFrame1 0
+CallNative has_script_loaded 1 1
+Not
+JumpFalse @loadscript_end
+push_0
+CallNative wait 1 0
+Jump @loadscript_loop
+
+:loadscript_end
+GetFrame1 0
+PushS 1024
+CallNative start_new_script 2 1
+Drop
+Return 1 0

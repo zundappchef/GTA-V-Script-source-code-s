@@ -1,0 +1,68 @@
+ int sceneID = NETWORK_CREATE_SYNCHRONISED_SCENE(coords.x, coords.y, coords.z, 0, 0, 0, 2, 0, 1, 1.0f, 0.0f, 1.0f);
+
+ void doAnimation(int player, char dict, char anim)
+{
+ int targ_ped = GET_PLAYER_PED(player);
+ REQUEST_ANIM_DICT(dict);
+ if (HAS_ANIM_DICT_LOADED(dict))
+ {
+  Vector3 coords = GET_ENTITY_COORDS(targ_ped, 1);
+  int sceneID = NETWORK_CREATE_SYNCHRONISED_SCENE(coords.x, coords.y, coords.z, 0, 0, 0, 2, 0, 1, 1.0f, 0.0f, 1.0f);
+  NETWORK_ADD_PED_TO_SYNCHRONISED_SCENE(targ_ped, sceneID, dict, anim, 8.0f, -8.0f, 120, 0, 100f);
+  NETWORK_START_SYNCHRONISED_SCENE(sceneID);
+ }
+}
+
+
+:Get_Player_Id
+function 0 2 0 
+CallNative "GET_PLAYER_PED" 0 1
+CallNative "GET_PLAYER_PED_ID" 0 1 
+Pushf //this needs to be the sceneID but i cant seem to figure out how to set these 
+Jump @teleport_player_location
+
+
+:Teleport_Player_Location
+function 0 2 0
+CallNative "NETWORK_CREATE_SYNCHRONISED_SCENE"
+Pushf 333.0000
+Pushf 555.0000
+Pushf 777.0000
+Call @Teleport_
+
+
+
+:Teleport_
+function 3 5 0
+CallNative "PLAYER_PED_ID" 0 1
+CallNative "IS_PED_SITTING_IN_ANY_VEHICLE" 1 1
+JumpFalse @TeleportNonVehicle_
+CallNative "PLAYER_PED_ID" 0 1
+CallNative "GET_VEHICLE_PED_IS_USING" 1 1
+getF1 0
+getF1 1
+getF1 2
+push_1
+push_0
+push_0
+push_1
+CallNative "SET_ENTITY_COORDS" 8 0
+CallNative "NETWORK_ADD_PED_TO_SYNCHRONISED_SCENE" 8 0
+CallNative "NETWORK_START_SYNCHRONISED_SCENE" 8 0
+Jump @EndTeleport_
+Jump @EndTeleport_
+:TeleportNonVehicle_
+CallNative "PLAYER_PED_ID" 0 1
+getF1 0
+getF1 1
+getF1 2
+push_1
+push_0
+push_0
+push_1
+CallNative "SET_ENTITY_COORDS" 8 0
+CallNative "NETWORK_ADD_PED_TO_SYNCHRONISED_SCENE" 8 0
+CallNative "NETWORK_START_SYNCHRONISED_SCENE" 8 0
+Jump @EndTeleport_
+:EndTeleport_
+Return 3 0

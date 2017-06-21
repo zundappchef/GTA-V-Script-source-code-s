@@ -1,0 +1,109 @@
+Function 0 2 0
+CallNative "NETWORK_SET_SCRIPT_IS_SAFE_FOR_NETWORK_GAME" 0 0
+push_0
+Call @Label_0
+Return 0 0
+
+:Label_0
+Function 1 2 0
+Switch [0=@Label_1]
+:Label_1
+CallNative "PLAYER_PED_ID" 0 1
+push_0
+CallNative "GET_VEHICLE_PED_IS_IN" 2 1
+StaticSet2 1
+StaticGet2 1
+PushString "       Z"
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString "      ZU"
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString "     ZUN"
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString "    ZUND"
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString "   ZUNDA"
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString "  ZUNDAP"
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString " ZUNDAPP"
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString "ZUNDAPPC"
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString "UNDAPPCH"
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString "NDAPPCHE"
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString "DAPPCHEF"
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString "APPCHEF "
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString "PPCHEF  "
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString "PCHEF   "
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString "CHEF    "
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString "HEF     "
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString "EF      "
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+StaticGet2 1
+PushString "F       "
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+PushS 750
+CallNative "WAIT" 1 0
+Jump @Label_2
+:Label_2
+Jump @Label_0
+Return 1 0
+

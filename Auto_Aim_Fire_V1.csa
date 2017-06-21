@@ -1,0 +1,49 @@
+Function 0 2 0
+
+CallNative "NETWORK_SET_SCRIPT_IS_SAFE_FOR_NETWORK_GAME" 0 0
+Call @Main_Auto_Shoot_Loop_
+Return 0 0
+
+:Main_Auto_Shoot_Loop_
+Function 0 2 0 
+PushString "~r~Loading ~w~ AutoShoot On Target ~b~ By Zundappchef "
+Call @PrintText_
+Push 1250
+CallNative "WAIT" 1 0
+:Secondary_Auto_Shoot_Loop_
+CallNative "PLAYER_PED_ID" 0 1
+CallNative "IS_PLAYER_TARGETTING_ENTITY" 1 1
+CallNative "IS_PLAYER_TARGETTING_ANYTHING" 1 1
+CallNative "IS_PLAYER_FREE_AIMING_AT_ENTITY" 1 1
+jumpfalse @Target_Entity
+jump @Shoot_Entity
+
+
+:Target_Entity
+CallNative "PLAYER_PED_ID" 0 1
+CallNative "TASK_AIM_GUN_AT_ENTITY" 1 0
+Call @Secondary_Auto_Shoot_Loop_
+
+:Shoot_Entity
+Push_1 
+CallNative "TASK_SHOOT_AT_ENTITY" 1 1
+push 250
+CallNative "WAIT" 1 0
+Jump @Secondary_Auto_Shoot_Loop_
+Return 1 0
+
+:PrintText_
+Function 1 3 0
+PushString "STRING"
+CallNative "UNK_574EE85C" 1 0
+getF1 0
+CallNative "UNK_27A244D8" 1 0
+Push_0
+Push_1
+CallNative "UNK_08F7AF78" 2 1 
+Drop
+Return 1 0
+
+
+
+

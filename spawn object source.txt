@@ -1,0 +1,44 @@
+
+// this is  the label that controlls where the object is placed
+:SpawnObjectMain_
+Function 0 2 0
+// here u can add the prop u like to spawn , make shure u get the NAME and NOT the hash 
+// this would be the name "prop_space_pistol " = This would be the hash "-1114972153,0xBD8AE007"
+PushString "Add prop u want to spawn here"
+// This wil control where the object is placed in the game 
+// its a 3d game so u need xyz so it get its respectfull place in space and it gets RJA  to control how the object is placed in that space
+//X
+fPush 1111.0000
+//Y
+fPush 1111.0000
+//Z
+fPush 1111.0000
+// RJA is limited to 360 degree control and gta does this by going from -180 to 0 and from 0 to +180
+//Rotation 
+fPush -180.0000
+//Jaw 
+fPush 0.0000
+//Angle 
+fPush 180.0000
+Call @SpawnObjectFuntion_
+
+
+//and here is the funtion label
+:SpawnObjectFuntion_
+Function 7 9 0
+getF1 0
+GetHash
+CallNative "REQUEST_MODEL" 1 0
+pushS 2500
+CallNative "WAIT" 1 0
+Jumpfalse @SetNetworkID_
+:SetNetworkID_
+CallNative "SET_NETWORK_ID_EXISTS_ON_ALL_MACHINES" 2 0
+getF1 4
+getF1 5
+getF1 6
+push_2
+push_1
+return 3 0
+
+// this wil not keep visible long u need to loop it in order to keep it visible

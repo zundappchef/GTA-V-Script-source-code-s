@@ -1,0 +1,328 @@
+﻿Function 0 2 0
+CallNative "NETWORK_SET_SCRIPT_IS_SAFE_FOR_NETWORK_GAME" 0 0
+Call @Main_
+Return 0 0
+
+:Main_
+Function 0 2 0
+PushString "~r~Loading ~w~Beach To Airport Bridge ~b~ By Zundappchef "
+Call @PrintText_
+PushString "prop_lev_des_barge_02"
+//XYZ Coords
+fPush -1155.0000
+fPush -1787.0000
+fPush 7.5000
+//Rotation
+fPush -20.0000
+fPush 0.0000
+fPush 35.0000
+Call @SpawnObject_
+PushString "prop_lev_des_barge_02"
+//XYZ Coords
+fPush -1135.2000
+fPush -1815.2000
+fPush 13.5000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 35.0000
+Call @SpawnObject_
+PushString "prop_lev_des_barge_02"
+//XYZ Coords
+fPush -1133.0000
+fPush -1842.0000
+fPush 12.30000
+//Rotation
+fPush 0.0000
+fPush 180.0000
+fPush -55.0000
+Call @SpawnObject_
+PushString "prop_lev_des_barge_02"
+//XYZ Coords
+fPush -1108.0000
+fPush -1853.0000
+fPush 13.5000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 35.0000
+Call @SpawnObject_
+PushString "prop_lev_des_barge_02"
+//XYZ Coords
+fPush -1067.4000
+fPush -1912.0000
+fPush 9.4000
+//Rotation
+fPush 10.0000
+fPush 180.0000
+fPush 35.0000
+Call @SpawnObject_
+PushString "prop_lev_des_barge_02"
+//XYZ Coords
+fPush -1087.4000
+fPush -1882.3000
+fPush 13.5000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 35.0000
+Call @SpawnObject_
+PushString "prop_lev_des_barge_02"
+//XYZ Coords
+fPush -1100.0000
+fPush -1926.0000
+fPush 13.0000
+//Rotation
+fPush 13.0000
+fPush 180.0000
+fPush 27.0000
+Call @SpawnObject_
+PushString "prop_lev_des_barge_02"
+//XYZ Coords
+fPush -1199.000
+fPush -1821000
+fPush 7.0000
+//Rotation
+fPush 13.0000
+fPush 180.0000
+fPush 35.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush -1119.6000
+fPush -1829.5000
+fPush 15.4000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 127.5000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush -1116.2000
+fPush -1833.7000
+fPush 15.3000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 127.5000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush -1124.9000
+fPush -1843.0000
+fPush 15.4000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush -145.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush -1129.9000
+fPush -1846.5000
+fPush 15.4000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush -145.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush -1134.9000
+fPush -1850.0000
+fPush 15.4000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush -145.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush -1140.0000
+fPush -1853.6000
+fPush 15.4000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush -145.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush -1131.3000
+fPush -1834.3000
+fPush 15.4000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush -145.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush -1136.3000
+fPush -1837.8000
+fPush 15.4000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush -145.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush -1148.0000
+fPush -18489.3000
+fPush 15.4000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush -145.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush -1141.3000
+fPush -1841.4000
+fPush 15.4000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush -145.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush -1146.3000
+fPush -1845.0000
+fPush 15.4000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush -145.0000
+Call @SpawnObject_
+PushString "prop_mp_ramp_02"
+//XYZ Coords
+fPush -1147.6000
+fPush -1848.5000
+fPush 16.0000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 125.0000
+Call @SpawnObject_
+PushString "prop_mp_ramp_02"
+//XYZ Coords
+fPush -1145.5000
+fPush -1851.5000
+fPush 16.0000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 125.0000
+Call @SpawnObject_
+PushString "prop_mp_ramp_02"
+//XYZ Coords
+fPush -1143.5000
+fPush -1853.5000
+fPush 16.0000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 145.0000
+Call @SpawnObject_
+PushString "prop_air_bigradar"
+//XYZ Coords
+fPush -1195.0000
+fPush -1790.0000
+fPush 18.0000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 0.0000
+Call @SpawnObject_
+PushS 500
+CallNative "WAIT" 1 0
+fPush -1138.0
+fPush -1844.0
+fPush 17.0
+Call @Teleport_
+PushString "Beach Airport Bridge ~g~Loaded! ~w~Enjoy!"
+Call @PrintText_
+:Loop_
+push_0
+CallNative "WAIT" 1 0
+Jump @Loop_
+Return 0 0
+
+:SpawnObject_
+Function 7 9 0
+getF1 0
+GetHash
+CallNative "REQUEST_MODEL" 1 0
+:SpawnObjectCheckModel_
+push_0
+CallNative "WAIT" 1 0
+getF1 0
+GetHash
+CallNative "HAS_MODEL_LOADED" 1 1
+JumpFalse @SpawnObjectCheckModel_
+getF1 0
+GetHash
+getF1 1
+getF1 2
+getF1 3
+push_1
+push_1
+push_0
+CallNative "CREATE_OBJECT_NO_OFFSET" 7 1
+Dup2
+CallNative "OBJ_TO_NET" 1 1
+push_1
+CallNative "SET_NETWORK_ID_EXISTS_ON_ALL_MACHINES" 2 0
+getF1 4
+getF1 5
+getF1 6
+push_2
+push_1
+CallNative "SET_ENTITY_ROTATION" 6 0
+push_1
+CallNative "FREEZE_ENTITY_POSITION" 2 0
+Return 7 0
+
+:PrintText_
+Function 1 3 0
+PushString "STRING"
+CallNative "UNK_574EE85C" 1 0
+getF1 0
+CallNative "UNK_27A244D8" 1 0
+push_0
+push_1
+CallNative "UNK_08F7AF78" 2 1
+Drop
+Return 1 0
+
+:Teleport_
+Function 3 5 0
+CallNative "PLAYER_PED_ID" 0 1
+CallNative "IS_PED_SITTING_IN_ANY_VEHICLE" 1 1
+JumpFalse @TeleportNonVehicle_
+CallNative "PLAYER_PED_ID" 0 1
+CallNative "GET_VEHICLE_PED_IS_USING" 1 1
+getF1 0
+getF1 1
+getF1 2
+push_1
+push_0
+push_0
+push_1
+CallNative "SET_ENTITY_COORDS" 8 0
+Jump @EndTeleport_
+:TeleportNonVehicle_
+CallNative "PLAYER_PED_ID" 0 1
+getF1 0
+getF1 1
+getF1 2
+push_1
+push_0
+push_0
+push_1
+CallNative "SET_ENTITY_COORDS" 8 0
+:EndTeleport_
+Return 3 0

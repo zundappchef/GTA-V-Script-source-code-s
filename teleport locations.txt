@@ -1,0 +1,313 @@
+else if(cstrcmp(SelectedMenu.Title, "Story Mode Locations"))
+		{
+			if(Base.Scroll == 0)
+			{
+				Vector3 Coords;
+				Coords.x = 7.4150; Coords.y = 535.5486; Coords.z = 176.0279;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Franklin's New House", 2000);
+			}
+			if(Base.Scroll == 1)
+			{
+				Vector3 Coords;
+				Coords.x = -14.9693; Coords.y = -1436.4430; Coords.z = 31.1185;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Franklin's Old House", 2000);
+			}
+			if(Base.Scroll == 2)
+			{ 
+				Vector3 Coords;
+				Coords.x = -813.6030; Coords.y = 179.4738; Coords.z = 72.1589;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Michael's House ", 2000);
+			}
+			if(Base.Scroll == 3)
+			{		
+				Vector3 Coords;		
+				Coords.x = 1974.7580; Coords.y = 3819.4570; Coords.z = 33.4363;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Trevor's House ", 2000);
+			}
+			if(Base.Scroll == 4)
+			{		
+				Vector3 Coords;	
+				Coords.x = 1273.69; Coords.y = -1718.72; Coords.z = 54.68;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Lester's House ", 2000);
+			}
+			if(Base.Scroll == 5)
+			{
+				Vector3 Coords;
+				Coords.x = 1397.5240f; Coords.y = 3607.4230f; Coords.z = 38.9419f;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Trevor's Meth Lab", 2000);
+			}
+			if(Base.Scroll == 6)
+			{
+				Vector3 Coords;
+				Coords.x = 2.6014; Coords.y = 525.5179; Coords.z = 170.6172;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Franklin's Bedroom", 2000);
+			}
+			if(Base.Scroll == 7)
+			{
+				Vector3 Coords;
+				Coords.x = 97.2707; Coords.y = -1290.9940; Coords.z = 29.2688;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Trevor's Offic", 2000);
+			}
+			if(Base.Scroll == 8)
+			{
+				Vector3 Coords;
+				Coords.x = -1159.034; Coords.y = -1521.180; Coords.z = 10.6327;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Wayne's Cousin's House", 2000);
+			}
+		}
+
+		else if(cstrcmp(SelectedMenu.Title, "Multiplayer Locations"))
+		{
+			if(Base.Scroll == 0)
+			{
+				Vector3 Coords;
+				Coords.x = -775.0500f; Coords.y = 312.32f; Coords.z = 85.7f;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Apartment - Outside", 2000);
+			}
+			if(Base.Scroll == 1)
+			{
+				Vector3 Coords;
+				Coords.x = -795.46f; Coords.y = 308.89f; Coords.z = 85.71f;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Garage - Outside", 2000);
+			}
+			if(Base.Scroll == 2)
+			{ 
+				Vector3 Coords;
+				Coords.x = -878.5444; Coords.y = -445.3285; Coords.z= 125.6352;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Apartment - Inside ", 2000);
+			}
+			if(Base.Scroll == 3)
+			{		
+				Vector3 Coords;		
+				Coords.x = 229.357; Coords.y = -992.9106; Coords.z= -98.9999;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Garage - Inside ", 2000);
+			}
+			if(Base.Scroll == 4)
+			{		
+				Vector3 Coords;	
+				Coords.x = -769.8004; Coords.y = 331.2076; Coords.z = 234.2694;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~400K Apartment Roof ", 2000);
+			}
+		}
+
+		else if(cstrcmp(SelectedMenu.Title, "Cool Locations"))
+		{
+			if(Base.Scroll == 0)
+			{
+				Vector3 Coords;
+				Coords.x = -597.9525f; Coords.y = 4475.2910f; Coords.z = 25.6890f;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Waterfall Hangout", 2000);
+			}
+			if(Base.Scroll == 1)
+			{
+				Vector3 Coords;
+				Coords.x = 17.8323f; Coords.y = 7630.0140f; Coords.z = 13.5068f;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Far Island", 2000);
+			}
+			if(Base.Scroll == 2)
+			{ 
+				Vector3 Coords;
+				Coords.x = 113.9319f; Coords.y = -618.5334f; Coords.z = 206.0465f;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Inside IAA Building ", 2000);
+			}
+			if(Base.Scroll == 3)
+			{		
+				Vector3 Coords;		
+				Coords.x = 135.5220f; Coords.y = -749.0003f; Coords.z = 260.0000f;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Inside FIB Building ", 2000);
+			}
+			if(Base.Scroll == 4)
+			{		
+				Vector3 Coords;	
+				Coords.x = 3617.231f; Coords.y = 3739.871f; Coords.z = 28.6901f;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Humane Labs 1", 2000);
+			}
+			if(Base.Scroll == 5)
+			{
+				Vector3 Coords;
+				Coords.x = 3531.703f; Coords.y = 3673.642f; Coords.z = 28.1212f;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Humane Labs 2", 2000);
+			}
+			if(Base.Scroll == 6)
+			{
+				Vector3 Coords;
+				Coords.x = 255.5819; Coords.y = 217.6896; Coords.z = 101.6834;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Bank Vault", 2000);
+			}
+			if(Base.Scroll == 7)
+			{
+				Vector3 Coords;
+				Coords.x = 1226.75; Coords.y = 125.5; Coords.z = 81.8394;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~MX Track", 2000);
+			}
+			if(Base.Scroll == 8)
+			{
+				Vector3 Coords;
+				Coords.x = -1202.0910; Coords.y = 2802.44; Coords.z = 14.8256;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Trail", 2000);
+			}
+		}
+
+		else if(cstrcmp(SelectedMenu.Title, "Glitched Locations"))
+		{
+			if(Base.Scroll == 0)
+			{
+				Vector3 Coords;
+				Coords.x = 937.4756; Coords.y = 42.4248; Coords.z = 80.899;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Inside Casino", 2000);
+			}
+			if(Base.Scroll == 1)
+			{
+				Vector3 Coords;
+				Coords.x = -879.0649; Coords.y = -247.7447; Coords.z = 40.1937;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Inside Jonny Tung", 2000);
+			}
+			if(Base.Scroll == 2)
+			{ 
+				Vector3 Coords;
+				Coords.x = -2356.0940; Coords.y = 3248.645; Coords.z = 101.4505;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Inside Zancudo Tower ", 2000);
+			}
+			if(Base.Scroll == 3)
+			{		
+				Vector3 Coords;		
+				Coords.x = -976.0147; Coords.y = -1003.843; Coords.z = 2.1502;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Vespucci House ", 2000);
+			}
+			if(Base.Scroll == 4)
+			{		
+				Vector3 Coords;	
+				Coords.x = -785.4869; Coords.y = 314.7161; Coords.z = 90.2189;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Apartment Glitch", 2000);
+			}
+			if(Base.Scroll == 5)
+			{
+				Vector3 Coords;
+				Coords.x = -359.4955; Coords.y = -781.3347; Coords.z = 31.7852;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Under Parking Garage", 2000);
+			}
+			if(Base.Scroll == 6)
+			{
+				Vector3 Coords;
+				Coords.x = -11.5143; Coords.y = -691.2623; Coords.z = 54.7947;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Unknown Building", 2000);
+			}
+			if(Base.Scroll == 7)
+			{
+				Vector3 Coords;
+				Coords.x = 546.0365; Coords.y = -183.3675; Coords.z = 12858.2100;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Mechanic Glitch", 2000);
+			}
+			if(Base.Scroll == 8)
+			{
+				Vector3 Coords;
+				Coords.x = -65.4903; Coords.y = -873.2886; Coords.z = 54.4982;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Heaven", 2000);
+			}
+		}
+
+		else if(cstrcmp(SelectedMenu.Title, "IPL Locations"))
+		{
+			if(Base.Scroll == 0)
+			{
+				Vector3 Coords;
+				Coords.x = 3595.39673f; Coords.y = -4893.727f; Coords.z = 115.838394f;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~North Yankton - Sign", 2000);
+			}
+			if(Base.Scroll == 1)
+			{
+				Vector3 Coords;
+				Coords.x = 3547.192f; Coords.y = -4675.149f; Coords.z = 114.1681f;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~North Yankton - Farm", 2000);
+			}
+			if(Base.Scroll == 2)
+			{ 
+				Vector3 Coords;
+				Coords.x = -162.8918f; Coords.y = -2365.7690f; Coords.z = 0;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Sunken Cargoship", 2000);
+			}
+			if(Base.Scroll == 3)
+			{		
+				Vector3 Coords;		
+				Coords.x = -2045.8f; Coords.y = -1031.2f; Coords.z = 11.9f;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Porn Yaught", 2000);
+			}
+			if(Base.Scroll == 4)
+			{		
+				Vector3 Coords;	
+				Coords.x = 356.8f; Coords.y = -590.1f; Coords.z = 43.3f;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Hospital Interior", 2000);
+			}
+			if(Base.Scroll == 5)
+			{
+				Vector3 Coords;
+				Coords.x = 2441.2f; Coords.y = 4968.5f; Coords.z = 51.7f;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~O'Neil Ranch", 2000);
+			}
+			if(Base.Scroll == 6)
+			{
+				Vector3 Coords;
+				Coords.x = -1047.9f; Coords.y = -233.0f; Coords.z = 39.0f;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~LifeInvader Lobby", 2000);
+			}
+			if(Base.Scroll == 7)
+			{
+				Vector3 Coords;
+				Coords.x = -90.0f; Coords.y = -2365.8f; Coords.z = 14.3f;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Cargoship", 2000);
+			}
+			if(Base.Scroll == 8)
+			{
+				Vector3 Coords;
+				Coords.x = -630.4f; Coords.y = -236.7f; Coords.z = 40.0f;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Jewelry Store", 2000);
+			}
+			if(Base.Scroll == 9)
+			{
+				Vector3 Coords;
+				Coords.x = 244.9f; Coords.y = -1374.7f; Coords.z = 39.5f;
+				Functions::ChangeCoords(Coords);
+				Functions::PRINT("Teleported to: ~b~Morgue", 2000);
+			}
+		}

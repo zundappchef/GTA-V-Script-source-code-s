@@ -1,0 +1,264 @@
+﻿
+
+
+    prop_lev_des_barge_02  
+  
+fPush 380.0000
+fPush 5560.0000
+fPush 700.0000
+  
+fPush 0.0000
+fPush 180.0000
+fPush 0.0000
+  
+    prop_lev_des_barge_02  
+  
+fPush 380.0000
+fPush 5590.0000
+fPush 700.0000
+  
+fPush 0.0000
+fPush 180.0000
+fPush 0.0000
+  
+    prop_lev_des_barge_02  
+  
+fPush 390.0000
+fPush 5573.0000
+fPush 700.0000
+  
+fPush 0.0000
+fPush 180.0000
+fPush 0.0000
+  
+    prop_lev_des_barge_02  
+  
+fPush 380.0000
+fPush 5560.0000
+fPush 712.0000
+  
+fPush 0.0000
+fPush 180.0000
+fPush 0.0000
+  
+    prop_lev_des_barge_02  
+  
+fPush 380.0000
+fPush 5590.0000
+fPush 712.0000
+  
+fPush 0.0000
+fPush 180.0000
+fPush 0.0000
+  
+    prop_lev_des_barge_02  
+  
+fPush 390.0000
+fPush 5573.0000
+fPush 712.0000
+  
+fPush 0.0000
+fPush 180.0000
+fPush 0.0000
+  
+    prop_lev_des_barge_02  
+  
+fPush 375.0000
+fPush 5568.0000
+fPush 700.0000
+  
+fPush 0.0000
+fPush 180.0000
+fPush 90.0000
+  
+    prop_barier_conc_05b  
+  
+fPush 375.0000
+fPush 5590.0000
+fPush 703.0000
+  
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+  
+    prop_barier_conc_05b  
+  
+fPush 375.0000
+fPush 5584.0000
+fPush 703.0000
+  
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+  
+    prop_barier_conc_05b  
+  
+fPush 375.0000
+fPush 5578.0000
+fPush 703.0000
+  
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+  
+    prop_barier_conc_05b  
+  
+fPush 375.0000
+fPush 5546.0000
+fPush 703.0000
+  
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+  
+    prop_barier_conc_05b  
+  
+fPush 375.0000
+fPush 5552.0000
+fPush 703.0000
+  
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+  
+    prop_barier_conc_05b  
+  
+fPush 375.0000
+fPush 5558.0000
+fPush 703.0000
+  
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+  
+    prop_asteroid_01  
+  
+fPush 382.0000
+fPush 5601.0000
+fPush 716.0000
+  
+fPush 0.0000
+fPush 0.0000
+fPush 0.0000
+  
+    prop_asteroid_01  
+  
+fPush 374.0000
+fPush 5589.0000
+fPush 716.0000
+  
+fPush 0.0000
+fPush 5.0000
+fPush 80.0000
+  
+    prop_asteroid_01  
+  
+fPush 374.0000
+fPush 5570.0000
+fPush 716.0000
+  
+fPush 0.0000
+fPush 5.0000
+fPush 80.0000
+  
+    prop_asteroid_01  
+  
+fPush 374.0000
+fPush 5548.0000
+fPush 716.0000
+  
+fPush 0.0000
+fPush 5.0000
+fPush 80.0000
+  
+    prop_asteroid_01  
+  
+fPush 388.0000
+fPush 5550.0000
+fPush 716.0000
+  
+fPush 0.0000
+fPush 5.0000
+fPush 0.0000
+  
+    prop_asteroid_01  
+  
+fPush 388.0000
+fPush 5565.0000
+fPush 716.0000
+  
+fPush 0.0000
+fPush 5.0000
+fPush 0.0000
+  
+    prop_asteroid_01  
+  
+fPush 388.0000
+fPush 5579.0000
+fPush 716.0000
+  
+fPush 0.0000
+fPush 5.0000
+fPush 0.0000
+  
+    prop_asteroid_01  
+  
+fPush 388.0000
+fPush 5592.0000
+fPush 716.0000
+  
+fPush 0.0000
+fPush 5.0000
+fPush 0.0000
+  
+    prop_asteroid_01  
+  
+fPush 404.0000
+fPush 5584.0000
+fPush 716.0000
+  
+fPush 0.0000
+fPush 5.0000
+fPush 80.0000
+  
+    prop_asteroid_01  
+  
+fPush 403.0000
+fPush 5562.0000
+fPush 716.0000
+  
+fPush 0.0000
+fPush 5.0000
+fPush 80.0000
+  
+    hei_prop_carrier_defense_02  
+  
+fPush 376.5000
+fPush 5590.0000
+fPush 703.0000
+  
+fPush 0.0000
+fPush 0.0000
+fPush -90.0000
+  
+    hei_prop_carrier_defense_01  
+  
+fPush 376.5000
+fPush 5548.0000
+fPush 703.0000
+  
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+  
+    prop_air_bigradar  
+  
+fPush 370.0000
+fPush 5565.0000
+fPush 723.0000
+  
+fPush 0.0000
+fPush 0.0000
+fPush 0.0000
+  
+

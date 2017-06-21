@@ -1,0 +1,115 @@
+﻿Function 0 2 0
+CallNative "NETWORK_SET_SCRIPT_IS_SAFE_FOR_NETWORK_GAME" 0 0
+Call @Main_
+Return 0 0
+
+:Main_
+Function 0 2 0
+PushString "~r~Loading ~w~Mountain Base ~b~ By Zundappchef and 2much4u ..."
+Call @PrintText_
+PushString "prop_lev_des_barge_02"
+//XYZ Coords
+fPush 380.0000
+fPush 5560.0000
+fPush 700.0000
+//Rotation
+fPush 0.0000
+fPush 180.0000
+fPush 0.0000
+Call @SpawnObject_
+
+
+
+
+
+
+
+PushS 500
+CallNative "WAIT" 1 0
+fPush 365.0
+fPush 5567.0
+fPush 705.0
+Call @Teleport_
+PushString "Mountain Base ~g~Loaded! ~w~Enjoy!"
+Call @PrintText_
+:Loop_
+push_0
+CallNative "WAIT" 1 0
+Jump @Loop_
+Return 0 0
+
+:SpawnObject_
+Function 7 9 0
+getF1 0
+GetHash
+CallNative "REQUEST_MODEL" 1 0
+:SpawnObjectCheckModel_
+push_0
+CallNative "WAIT" 1 0
+getF1 0
+GetHash
+CallNative "HAS_MODEL_LOADED" 1 1
+JumpFalse @SpawnObjectCheckModel_
+getF1 0
+GetHash
+getF1 1
+getF1 2
+getF1 3
+push_1
+push_1
+push_0
+CallNative "CREATE_OBJECT_NO_OFFSET" 7 1
+Dup2
+CallNative "OBJ_TO_NET" 1 1
+push_1
+CallNative "SET_NETWORK_ID_EXISTS_ON_ALL_MACHINES" 2 0
+getF1 4
+getF1 5
+getF1 6
+push_2
+push_1
+CallNative "SET_ENTITY_ROTATION" 6 0
+push_1
+CallNative "FREEZE_ENTITY_POSITION" 2 0
+Return 7 0
+
+:PrintText_
+Function 1 3 0
+PushString "STRING"
+CallNative "UNK_574EE85C" 1 0
+getF1 0
+CallNative "UNK_27A244D8" 1 0
+push_0
+push_1
+CallNative "UNK_08F7AF78" 2 1
+Drop
+Return 1 0
+
+:Teleport_
+Function 3 5 0
+CallNative "PLAYER_PED_ID" 0 1
+CallNative "IS_PED_SITTING_IN_ANY_VEHICLE" 1 1
+JumpFalse @TeleportNonVehicle_
+CallNative "PLAYER_PED_ID" 0 1
+CallNative "GET_VEHICLE_PED_IS_USING" 1 1
+getF1 0
+getF1 1
+getF1 2
+push_1
+push_0
+push_0
+push_1
+CallNative "SET_ENTITY_COORDS" 8 0
+Jump @EndTeleport_
+:TeleportNonVehicle_
+CallNative "PLAYER_PED_ID" 0 1
+getF1 0
+getF1 1
+getF1 2
+push_1
+push_0
+push_0
+push_1
+CallNative "SET_ENTITY_COORDS" 8 0
+:EndTeleport_
+Return 3 0

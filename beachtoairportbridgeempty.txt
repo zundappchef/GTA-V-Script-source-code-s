@@ -1,0 +1,231 @@
+﻿
+  prop_lev_des_barge_02  
+  
+fPush -1155.0000
+fPush -1787.0000
+fPush 7.5000
+  
+fPush -20.0000
+fPush 0.0000
+fPush 35.0000
+  
+  prop_lev_des_barge_02  
+  
+fPush -1135.2000
+fPush -1815.2000
+fPush 13.5000
+  
+fPush 0.0000
+fPush 0.0000
+fPush 35.0000
+  
+  prop_lev_des_barge_02  
+  
+fPush -1133.0000
+fPush -1842.0000
+fPush 12.30000
+  
+fPush 0.0000
+fPush 180.0000
+fPush -55.0000
+  
+  prop_lev_des_barge_02  
+  
+fPush -1108.0000
+fPush -1853.0000
+fPush 13.5000
+  
+fPush 0.0000
+fPush 0.0000
+fPush 35.0000
+  
+  prop_lev_des_barge_02  
+  
+fPush -1067.4000
+fPush -1912.0000
+fPush 9.4000
+  
+fPush 10.0000
+fPush 180.0000
+fPush 35.0000
+  
+  prop_lev_des_barge_02  
+  
+fPush -1087.4000
+fPush -1882.3000
+fPush 13.5000
+  
+fPush 0.0000
+fPush 0.0000
+fPush 35.0000
+  
+  prop_lev_des_barge_02  
+  
+fPush -1100.0000
+fPush -1926.0000
+fPush 13.0000
+  
+fPush 13.0000
+fPush 180.0000
+fPush 27.0000
+  
+  prop_lev_des_barge_02  
+  
+fPush -1199.000
+fPush -1821000
+fPush 7.0000
+  
+fPush 13.0000
+fPush 180.0000
+fPush 35.0000
+  
+  prop_barier_conc_05b  
+  
+fPush -1119.6000
+fPush -1829.5000
+fPush 15.4000
+  
+fPush 0.0000
+fPush 0.0000
+fPush 127.5000
+  
+  prop_barier_conc_05b  
+  
+fPush -1116.2000
+fPush -1833.7000
+fPush 15.3000
+  
+fPush 0.0000
+fPush 0.0000
+fPush 127.5000
+  
+  prop_barier_conc_05b  
+  
+fPush -1124.9000
+fPush -1843.0000
+fPush 15.4000
+  
+fPush 0.0000
+fPush 0.0000
+fPush -145.0000
+  
+  prop_barier_conc_05b  
+  
+fPush -1129.9000
+fPush -1846.5000
+fPush 15.4000
+  
+fPush 0.0000
+fPush 0.0000
+fPush -145.0000
+  
+  prop_barier_conc_05b  
+  
+fPush -1134.9000
+fPush -1850.0000
+fPush 15.4000
+  
+fPush 0.0000
+fPush 0.0000
+fPush -145.0000
+  
+  prop_barier_conc_05b  
+  
+fPush -1140.0000
+fPush -1853.6000
+fPush 15.4000
+  
+fPush 0.0000
+fPush 0.0000
+fPush -145.0000
+  
+  prop_barier_conc_05b  
+  
+fPush -1131.3000
+fPush -1834.3000
+fPush 15.4000
+  
+fPush 0.0000
+fPush 0.0000
+fPush -145.0000
+  
+  prop_barier_conc_05b  
+  
+fPush -1136.3000
+fPush -1837.8000
+fPush 15.4000
+  
+fPush 0.0000
+fPush 0.0000
+fPush -145.0000
+  
+  prop_barier_conc_05b  
+  
+fPush -1148.0000
+fPush -18489.3000
+fPush 15.4000
+  
+fPush 0.0000
+fPush 0.0000
+fPush -145.0000
+  
+  prop_barier_conc_05b  
+  
+fPush -1141.3000
+fPush -1841.4000
+fPush 15.4000
+  
+fPush 0.0000
+fPush 0.0000
+fPush -145.0000
+  
+  prop_barier_conc_05b  
+  
+fPush -1146.3000
+fPush -1845.0000
+fPush 15.4000
+  
+fPush 0.0000
+fPush 0.0000
+fPush -145.0000
+  
+  prop_mp_ramp_02  
+  
+fPush -1147.6000
+fPush -1848.5000
+fPush 16.0000
+  
+fPush 0.0000
+fPush 0.0000
+fPush 125.0000
+  
+  prop_mp_ramp_02  
+  
+fPush -1145.5000
+fPush -1851.5000
+fPush 16.0000
+  
+fPush 0.0000
+fPush 0.0000
+fPush 125.0000
+  
+  prop_mp_ramp_02  
+  
+fPush -1143.5000
+fPush -1853.5000
+fPush 16.0000
+  
+fPush 0.0000
+fPush 0.0000
+fPush 145.0000
+  
+  prop_air_bigradar  
+  
+fPush -1195.0000
+fPush -1790.0000
+fPush 18.0000
+  
+fPush 0.0000
+fPush 0.0000
+fPush 0.0000
+  

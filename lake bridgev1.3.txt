@@ -1,0 +1,2111 @@
+﻿Function 0 2 0
+CallNative "NETWORK_SET_SCRIPT_IS_SAFE_FOR_NETWORK_GAME" 0 0
+Call @Main_
+Return 0 0
+
+:Main_
+Function 0 2 0
+PushString "~r~Loading ~w~Lake Bridge ~b~ By Zundappchef "
+Call @PrintText_
+PushString "prop_lev_des_barge_02"
+//XYZ Coords
+fPush 1300.0000
+fPush 3681.0000
+fPush 33.0000
+//Rotation
+fPush 13.0000
+fPush 180.0000
+fPush 0.0000
+Call @SpawnObject_
+PushString "prop_lev_des_barge_02"
+//XYZ Coords
+fPush 1300.0000
+fPush 3716.0000
+fPush 37.0000
+//Rotation
+fPush 0.0000
+fPush 180.0000
+fPush 0.0000
+Call @SpawnObject_
+PushString "prop_lev_des_barge_02"
+//XYZ Coords
+fPush 1300.0000
+fPush 3752.0000
+fPush 37.0000
+//Rotation
+fPush 0.0000
+fPush 180.0000
+fPush 0.0000
+Call @SpawnObject_
+PushString "prop_lev_des_barge_02"
+//XYZ Coords
+fPush 1300.0000
+fPush 3788.0000
+fPush 37.0000
+//Rotation
+fPush 0.0000
+fPush 180.0000
+fPush 0.0000
+Call @SpawnObject_
+PushString "prop_lev_des_barge_02"
+//XYZ Coords
+fPush 1300.0000
+fPush 3824.0000
+fPush 37.0000
+//Rotation
+fPush 0.0000
+fPush 180.0000
+fPush 0.0000
+Call @SpawnObject_
+PushString "prop_lev_des_barge_02"
+//XYZ Coords
+fPush 1300.0000
+fPush 3860.0000
+fPush 37.0000
+//Rotation
+fPush 0.0000
+fPush 180.0000
+fPush 0.0000
+Call @SpawnObject_
+PushString "prop_lev_des_barge_02"
+//XYZ Coords
+fPush 1300.0000
+fPush 3896.0000
+fPush 37.0000
+//Rotation
+fPush 0.0000
+fPush 180.0000
+fPush 0.0000
+Call @SpawnObject_
+PushString "prop_lev_des_barge_02"
+//XYZ Coords
+fPush 1300.0000
+fPush 3932.0000
+fPush 37.0000
+//Rotation
+fPush 0.0000
+fPush 180.0000
+fPush 0.0000
+Call @SpawnObject_
+PushString "prop_lev_des_barge_02"
+//XYZ Coords
+fPush 1300.0000
+fPush 3968.0000
+fPush 37.0000
+//Rotation
+fPush 0.0000
+fPush 180.0000
+fPush 0.0000
+Call @SpawnObject_
+PushString "prop_lev_des_barge_02"
+//XYZ Coords
+fPush 1300.0000
+fPush 4004.0000
+fPush 37.0000
+//Rotation
+fPush 0.0000
+fPush 180.0000
+fPush 0.0000
+Call @SpawnObject_
+PushString "prop_lev_des_barge_02"
+//XYZ Coords
+fPush 1300.0000
+fPush 4040.0000
+fPush 37.0000
+//Rotation
+fPush 0.0000
+fPush 180.0000
+fPush 0.0000
+Call @SpawnObject_
+PushString "prop_lev_des_barge_02"
+//XYZ Coords
+fPush 1300.0000
+fPush 4076.0000
+fPush 37.0000
+//Rotation
+fPush 0.0000
+fPush 180.0000
+fPush 0.0000
+Call @SpawnObject_
+PushString "prop_lev_des_barge_02"
+//XYZ Coords
+fPush 1300.0000
+fPush 4112.0000
+fPush 37.0000
+//Rotation
+fPush 0.0000
+fPush 180.0000
+fPush 0.0000
+Call @SpawnObject_
+PushString "prop_lev_des_barge_02"
+//XYZ Coords
+fPush 1300.0000
+fPush 4148.0000
+fPush 37.0000
+//Rotation
+fPush 0.0000
+fPush 180.0000
+fPush 0.0000
+Call @SpawnObject_
+PushString "prop_lev_des_barge_02"
+//XYZ Coords
+fPush 1300.0000
+fPush 4184.0000
+fPush 37.0000
+//Rotation
+fPush 0.0000
+fPush 180.0000
+fPush 0.0000
+Call @SpawnObject_
+PushString "prop_lev_des_barge_02"
+//XYZ Coords
+fPush 1300.0000
+fPush 4220.0000
+fPush 37.0000
+//Rotation
+fPush 0.0000
+fPush 180.0000
+fPush 0.0000
+Call @SpawnObject_
+PushString "prop_lev_des_barge_02"
+//XYZ Coords
+fPush 1300.0000
+fPush 4256.0000
+fPush 37.0000
+//Rotation
+fPush 0.0000
+fPush 180.0000
+fPush 0.0000
+Call @SpawnObject_
+PushString "prop_lev_des_barge_02"
+//XYZ Coords
+fPush 1300.0000
+fPush 4292.0000
+fPush 37.0000
+//Rotation
+fPush 0.0000
+fPush 180.0000
+fPush 0.0000
+Call @SpawnObject_
+PushString "prop_lev_des_barge_02"
+//XYZ Coords
+fPush 1307.0000
+fPush 4308.0000
+fPush 37.0000
+//Rotation
+fPush 0.0000
+fPush 180.0000
+fPush -22.0000
+Call @SpawnObject_
+PushString "prop_lev_des_barge_02"
+//XYZ Coords
+fPush 1323.0000
+fPush 4326.3000
+fPush 35.6000
+//Rotation
+fPush 0.3000
+fPush 164.5000
+fPush -112.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3702.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3709.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3716.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3723.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3730.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3737.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3744.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3751.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3758.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3765.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3772.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3779.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3786.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3793.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3800.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3807.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3814.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3821.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3828.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3835.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3842.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3849.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3856.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3863.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3870.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3877.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3884.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3891.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3898.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3905.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3912.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3919.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3926.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3933.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3940.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3947.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3954.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3961.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3968.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3975.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3982.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3989.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 3996.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4003.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4010.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4017.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4024.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4031.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4038.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4045.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4052.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4059.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4066.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4073.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4080.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4087.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4095.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4102.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4109.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4116.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4123.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4130.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4137.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4144.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4151.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4158.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4165.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4172.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4179.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4186.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4193.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4200.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4207.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4214.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4221.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4228.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4235.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4242.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4249.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4256.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4263.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4270.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4277.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4284.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1294.5000
+fPush 4291.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3702.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3709.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3716.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3723.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3730.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3737.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3744.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3751.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3758.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3765.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3772.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3779.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3786.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3793.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3800.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3807.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3814.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3821.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3828.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3835.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3842.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3849.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3856.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3863.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3870.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3877.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3884.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3891.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3898.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3905.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3912.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3919.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3926.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3933.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3940.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3947.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3954.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3961.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3968.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3975.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3982.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3989.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 3996.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4003.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4010.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4017.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4024.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_lev_des_barge_02"
+//XYZ Coords
+fPush 1322.0000
+fPush 4031.0000
+fPush 32.0000
+//Rotation
+fPush 16.0000
+fPush 180.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_lev_des_barge_02"
+//XYZ Coords
+fPush 1353.0000
+fPush 4031.0000
+fPush 28.0000
+//Rotation
+fPush 0.0000
+fPush 180.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4038.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4045.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4052.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4059.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4066.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4073.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4080.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4087.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4095.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4102.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4109.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4116.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4123.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4130.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4137.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4144.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4151.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4158.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4165.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4172.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4179.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4186.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4193.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4200.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4207.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4214.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4221.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4228.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4235.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4242.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4249.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4256.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4263.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4270.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4277.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_barier_conc_05b"
+//XYZ Coords
+fPush 1305.5000
+fPush 4256.0000
+fPush 39.9000
+//Rotation
+fPush 0.0000
+fPush 0.0000
+fPush 90.0000
+Call @SpawnObject_
+PushString "prop_windmill_01"
+//XYZ Coords
+fPush 1300.0000
+fPush 3750.0000
+fPush 35.5000
+//Rotation
+fPush 0.0000
+fPush 180.0000
+fPush 00.0000
+Call @SpawnObject_
+PushString "prop_windmill_01"
+//XYZ Coords
+fPush 1300.0000
+fPush 3800.0000
+fPush 35.5000
+//Rotation
+fPush 0.0000
+fPush 180.0000
+fPush 00.0000
+Call @SpawnObject_
+PushString "prop_windmill_01"
+//XYZ Coords
+fPush 1300.0000
+fPush 3850.0000
+fPush 35.5000
+//Rotation
+fPush 0.0000
+fPush 180.0000
+fPush 00.0000
+Call @SpawnObject_
+PushString "prop_windmill_01"
+//XYZ Coords
+fPush 1300.0000
+fPush 3900.0000
+fPush 35.5000
+//Rotation
+fPush 0.0000
+fPush 180.0000
+fPush 00.0000
+Call @SpawnObject_
+PushString "prop_windmill_01"
+//XYZ Coords
+fPush 1300.0000
+fPush 3950.0000
+fPush 35.5000
+//Rotation
+fPush 0.0000
+fPush 180.0000
+fPush 00.0000
+Call @SpawnObject_
+PushString "prop_windmill_01"
+//XYZ Coords
+fPush 1300.0000
+fPush 4000.0000
+fPush 35.5000
+//Rotation
+fPush 0.0000
+fPush 180.0000
+fPush 00.0000
+Call @SpawnObject_
+PushString "prop_windmill_01"
+//XYZ Coords
+fPush 1300.0000
+fPush 4050.0000
+fPush 35.5000
+//Rotation
+fPush 0.0000
+fPush 180.0000
+fPush 00.0000
+Call @SpawnObject_
+PushString "prop_windmill_01"
+//XYZ Coords
+fPush 1300.0000
+fPush 4100.0000
+fPush 35.5000
+//Rotation
+fPush 0.0000
+fPush 180.0000
+fPush 00.0000
+Call @SpawnObject_
+PushString "prop_windmill_01"
+//XYZ Coords
+fPush 1300.0000
+fPush 4150.0000
+fPush 35.5000
+//Rotation
+fPush 0.0000
+fPush 180.0000
+fPush 00.0000
+Call @SpawnObject_
+PushString "prop_windmill_01"
+//XYZ Coords
+fPush 1300.0000
+fPush 4200.0000
+fPush 35.5000
+//Rotation
+fPush 0.0000
+fPush 180.0000
+fPush 00.0000
+Call @SpawnObject_
+PushString "prop_windmill_01"
+//XYZ Coords
+fPush 1300.0000
+fPush 4250.0000
+fPush 35.5000
+//Rotation
+fPush 0.0000
+fPush 180.0000
+fPush 00.0000
+Call @SpawnObject_
+
+
+
+PushS 500
+CallNative "WAIT" 1 0
+fPush 1300.0000
+fPush 3665.0000
+fPush 33.0000
+Call @Teleport_
+PushString "Lake Bridge ~g~ Loaded! ~b~ Enjoy !"
+Call @PrintText_
+:Loop_
+push_0
+CallNative "WAIT" 1 0
+Jump @Loop_
+Return 0 0
+
+:SpawnObject_
+Function 7 9 0
+getF1 0
+GetHash
+CallNative "REQUEST_MODEL" 1 0
+:SpawnObjectCheckModel_
+push_0
+CallNative "WAIT" 1 0
+getF1 0
+GetHash
+CallNative "HAS_MODEL_LOADED" 1 1
+JumpFalse @SpawnObjectCheckModel_
+getF1 0
+GetHash
+getF1 1
+getF1 2
+getF1 3
+push_1
+push_1
+push_0
+CallNative "CREATE_OBJECT_NO_OFFSET" 7 1
+Dup2
+CallNative "OBJ_TO_NET" 1 1
+push_1
+CallNative "SET_NETWORK_ID_EXISTS_ON_ALL_MACHINES" 2 0
+getF1 4
+getF1 5
+getF1 6
+push_2
+push_1
+CallNative "SET_ENTITY_ROTATION" 6 0
+push_1
+CallNative "FREEZE_ENTITY_POSITION" 2 0
+Return 7 0
+
+:PrintText_
+Function 1 3 0
+PushString "STRING"
+CallNative "UNK_574EE85C" 1 0
+getF1 0
+CallNative "UNK_27A244D8" 1 0
+push_0
+push_1
+CallNative "UNK_08F7AF78" 2 1
+Drop
+Return 1 0
+
+:Teleport_
+Function 3 5 0
+CallNative "PLAYER_PED_ID" 0 1
+CallNative "IS_PED_SITTING_IN_ANY_VEHICLE" 1 1
+JumpFalse @TeleportNonVehicle_
+CallNative "PLAYER_PED_ID" 0 1
+CallNative "GET_VEHICLE_PED_IS_USING" 1 1
+getF1 0
+getF1 1
+getF1 2
+push_1
+push_0
+push_0
+push_1
+CallNative "SET_ENTITY_COORDS" 8 0
+Jump @EndTeleport_
+:TeleportNonVehicle_
+CallNative "PLAYER_PED_ID" 0 1
+getF1 0
+getF1 1
+getF1 2
+push_1
+push_0
+push_0
+push_1
+CallNative "SET_ENTITY_COORDS" 8 0
+:EndTeleport_
+Return 3 0

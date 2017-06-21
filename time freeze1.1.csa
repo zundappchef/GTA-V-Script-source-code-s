@@ -1,0 +1,123 @@
+
+//these native`s controll time
+// u can also use 1 bool to toggle
+// or u can use globals ( dont realy want to find out or know how to use those with this)
+
+
+//GET_CLOCK_HOURS
+//GET_CLOCK_MINUTES
+//GET_CLOCK_SECONDS
+//GET_CLOCK_DAY_OF_WEEK
+//GET_CLOCK_DAY_OF_MONTH
+//GET_CLOCK_MONTH
+//GET_CLOCK_YEAR
+//GET_MILLISECONDS_PER_GAME_MINUTE
+//SET_CLOCK_DATE
+//SET_CLOCK_TIME
+//PAUZE_CLOCK ( but this is a bool that u can toggle dont know how)
+
+// here we going tot get the time with each native`s
+// then we set it as a static ( the push and code are not right but its a fine example)
+// since im a chiliad mystery hunter for code i find this very important to set the right time for events to unlock
+// some events will only trigger within the right timeframe`s 
+
+:get_time1
+Function 0 2 0
+CallNative GET_CLOCK_YEAR 1 0
+StaticSet1 
+Call @get_time2
+Return 0 0
+
+:get_time2
+Function 0 2 0
+CallNative GET_CLOCK_MONTH 1 0 
+StaticSet2 2
+Call @get_time3
+Return 0 0
+
+
+
+:get_time3
+Function 0 2 0
+CallNative GET_CLOCK_DAY_OF_MONTH 1 0
+StaticSet2 3
+Call @get_time4
+Return 0 0
+
+
+
+:get_time4
+Function 0 2 0
+CallNative GET_CLOCK_DAY_OF_WEEK 1 1
+StaticSet2 4
+Call @get_time5
+Return 0 0
+
+
+:get_time5
+Function 0 2 0
+CallNative GET_CLOCK_HOURS 1 0
+StaticSet2 5
+Call @get_time6
+Return 0 0
+
+
+
+:get_time6
+Function 0 2 0
+CallNative GET_CLOCK_MINUTES 1 0
+StaticSet2 6
+Call @get_time7
+Return 0 0
+
+
+:get_time7
+Function 0 2 0
+CallNative GET_CLOCK_SECONDS 1 0
+StaticSet2 7
+Call @get_time8
+Return 0 0
+
+
+:get_time8
+Function 0 2 0
+CallNative GET_MILLISECONDS_PER_GAME_MINUTE 1 0
+StaticSet2 8
+Call @Freeze_Time
+Return 0 0
+
+
+
+
+// here we setting the clock`s date  and then make it a static number 
+// we also set the clock`s time and them make it a static number
+// we then overide it so it also works online ( i dont realy think this is needed)
+
+:Freeze_Time
+Function 0 2 0
+Push_4
+StaticGet1
+StaticGet2 2
+StaticGet2 3
+StaticGet2 4
+CallNative "SET_CLOCK_DATE" 4 0
+StaticSet2 9 
+Push_4
+StaticGet2 5
+StaticGet2 6
+StaticGet2 7
+Staticget2 8
+CallNative "SET_CLOCK_TIME" 4 0
+StaticSet2 10 
+
+// see this is the netwrok check i dont realy know why but to be shure lets also set this
+Push_2
+StaticGet2 9
+StaticGet2 10
+CallNative "NETWORK_OVERRIDE_CLOCK_TIME" 3 0
+PushS 1000
+CallNative "WAIT" 1 0
+// now to loop it otherwise time wil start up again
+call @Freeze_Time
+Return 2 0
+

@@ -1,0 +1,47 @@
+
+here is some extra information before the funtion 
+// u can  in the main funtion a  prop u like to spawn as a ambient pick up lets say a moneybag or weed pallet a hash would not work 
+// EXAMPLE this would be the name "prop_space_pistol " = This would be the hash "-1114972153,0xBD8AE007"
+
+// GTA is a 3d game that uses all 6 axises
+// this means that  and object can be placed in a space and set in a space 
+// there is xyz that controlls up down "heave" / left right "sway"/ back forward "surge" in a respectfull place in space
+// and there is PJR that controlls Pitch / Jaw  / Roll RJA   as this is a ambient pick up u dont need RJA  to control how the object is placed in that space
+
+
+
+// this is  the label that spawns a ambient pickup in a place in space
+:SpawnAmbientPickUpMain_
+Function 0 2 0
+PushString "Add prop u want to spawn here"
+//X
+fPush 1111.0000
+//Y
+fPush 1111.0000
+//Z
+fPush 1111.0000
+Call @SpawnAmbientPickUpFuntion_
+Return 0 0
+
+
+//and here is the funtion label
+:SpawnAmbientPickUpFuntion_
+Function 7 9 0
+getF1 0
+GetHash
+CallNative "REQUEST_MODEL" 1 0
+fPush 1.2
+fAdd
+Push_0
+PushI24 28000
+pGlobal3 2407802
+GetImmediate2 4114
+push_1
+push_0
+CallNative "create_ambient_pickup" 9 1
+pushS 500
+CallNative "WAIT" 1 0
+return 3 0
+
+// this wil create an ambient pickup with a valeu of 28000 , it wil spawn it in a place in space  of your choosing it wil spawn just 1 pick up
+// is u want more use a loop with a big delay of minimal of 0.5 seconds and a max of 2.5 second
