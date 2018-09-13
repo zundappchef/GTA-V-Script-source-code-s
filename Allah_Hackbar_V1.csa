@@ -1,0 +1,218 @@
+
+
+//allah hackbar mod
+
+Function 0 2 0
+
+CallNative "NETWORK_SET_SCRIPT_IS_SAFE_FOR_NETWORK_GAME" 0 0
+push_2
+StaticSet 598
+Call @Main
+Return 0 0
+
+:Main
+Function 0 2 0 
+PushString "~r~Loading ~w~Allah Hackbar vehicle mod ~b~ By Zundappchef "
+Call @PrintText_
+PushS 2000
+CallNative "WAIT" 1 0
+Push 729783779
+Call @SpawnVehicle_
+PushString "Youre Explosive ride has been ~r summoned "
+Call @PrintText_
+CallNative "PLAYER_PED_ID" 0 1
+push_0
+CallNative "GET_VEHICLE_PED_IS_IN" 2 1
+Dup
+StaticSet1 1
+PushString "Danger"
+CallNative "SET_VEHICLE_NUMBER_PLATE_TEXT" 2 0
+StaticGet1 1
+Push2 0 1
+CallNative "SET_VEHICLE_OUT_OF_CONTROL" 3 0
+
+//Optional code - remove the jump to use it. The code will hugely increase the explosion size
+
+:loop
+push_0
+CallNative "WAIT" 1 0
+StaticGet1 1
+CallNative "DOES_ENTITY_EXIST" 1 1
+JumpFalse @end
+CallNative "PLAYER_PED_ID" 0 1
+StaticGet1 1
+CallNative "IS_PED_SITTING_IN_VEHICLE" 2 1
+JumpFalse @end
+StaticGet1 1
+CallNative "HAS_ENTITY_COLLIDED_WITH_ANYTHING" 1 1
+JumpFalse @loop
+CallNative "PLAYER_PED_ID" 0 1
+push_1
+CallNative "GET_ENTITY_COORDS" 2 3
+Push1 29//Blimp
+fPush_1.0//damageScale
+push_1//isAudible
+push_0//isInvisible
+fPush_1.0//cameraShake
+CallNative "ADD_EXPLOSION" 8 0
+return 0 0
+
+:SpawnVehicle_
+Function 1 8 0
+push_0
+setF1 4
+push_0
+setF1 7
+getF1 0
+CallNative "IS_MODEL_VALID" 1 1
+JumpFalse @SpawnVehicleError_
+getF1 0
+CallNative "IS_MODEL_A_VEHICLE" 1 1
+push_0
+JumpEQ @ErrorVehiclesOnly_
+getF1 0
+Call @RequestModel_
+StaticGet2 598
+push_2
+JumpNE @SetToSpawnVehicleToTheSide_
+CallNative "PLAYER_PED_ID" 0 1
+CallNative "IS_PED_SITTING_IN_ANY_VEHICLE" 1 1
+JumpFalse @SpawnVehicleDecidePosition_
+CallNative "PLAYER_PED_ID" 0 1
+CallNative "GET_VEHICLE_PED_IS_USING" 1 1
+Push_-1
+CallNative "GET_PED_IN_VEHICLE_SEAT" 2 1
+CallNative "PLAYER_PED_ID" 0 1
+JumpNE @SetToSpawnVehicleToTheSide_
+Jump @SpawnVehicleContinue_
+:SetToSpawnVehicleToTheSide_
+push_1
+setF1 7
+Jump @SpawnVehicleDecidePosition_
+:SpawnVehicleContinue_
+push_1
+setF1 4
+CallNative "PLAYER_PED_ID" 0 1
+CallNative "GET_VEHICLE_PED_IS_USING" 1 1
+Dup
+setF1 6
+CallNative "GET_ENTITY_SPEED" 1 1
+setF1 5
+getF1 6
+push_0
+push_1
+CallNative "SET_ENTITY_AS_MISSION_ENTITY" 3 0
+pFrame1 6
+CallNative "DELETE_VEHICLE" 1 0
+push_0
+CallNative "WAIT" 1 0
+:SpawnVehicleDecidePosition_
+getF1 7
+push_1
+JumpEQ @SpawnVehicleToTheSide_
+:SpawnVehicleAtPlayerCoords_
+getF1 0
+CallNative "PLAYER_PED_ID" 0 1
+push_1
+CallNative "GET_ENTITY_COORDS" 2 3
+Jump @SpawnVehicleCreate_
+:SpawnVehicleToTheSide_
+StaticGet2 598
+push_2
+JumpNE @UseOnlinePlayerIDInstead_
+CallNative "PLAYER_PED_ID" 0 1
+setF1 8
+Jump @GetDamnCoordsAlready_
+:UseOnlinePlayerIDInstead_
+StaticGet2 597
+CallNative "GET_PLAYER_PED" 1 1
+setF1 8
+:GetDamnCoordsAlready_
+getF1 0
+getF1 8
+fPush -4.0
+fPush_0.0
+fPush_0.0
+CallNative "GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS" 4 3
+:SpawnVehicleCreate_
+CallNative "PLAYER_PED_ID" 0 1
+CallNative "GET_ENTITY_HEADING" 1 1
+push_0
+push_0
+CallNative "CREATE_VEHICLE" 7 1
+setF1 6
+CallNative "NETWORK_IS_GAME_IN_PROGRESS" 0 1
+JumpFalse @GetModelType_
+getF1 6
+CallNative "UNK_31A630A4" 1 0
+getF1 6
+CallNative "VEH_TO_NET" 1 1
+push_1
+CallNative "SET_NETWORK_ID_EXISTS_ON_ALL_MACHINES" 2 0
+:GetModelType_
+getF1 0
+CallNative "IS_THIS_MODEL_A_PLANE" 1 1
+Not
+JumpFalse @SpawnVehicleSkipGround_
+getF1 0
+CallNative "IS_THIS_MODEL_A_HELI" 1 1
+Not
+JumpFalse @SpawnVehicleSkipGround_
+getF1 6
+CallNative "SET_VEHICLE_ON_GROUND_PROPERLY" 1 1
+Drop
+:SpawnVehicleSkipGround_
+getF1 6
+push_1
+push_1
+CallNative "SET_VEHICLE_ENGINE_ON" 3 0
+StaticGet2 598
+push_2
+JumpNE @SetVehicleModelAsNoLongerNeeded_
+CallNative "PLAYER_PED_ID" 0 1
+getF1 6
+push_-1
+CallNative "SET_PED_INTO_VEHICLE" 3 0
+getF1 4
+JumpFalse @EndSpawnVehicle_
+getF1 6
+getF1 5
+CallNative "SET_VEHICLE_FORWARD_SPEED" 2 0
+:SetVehicleModelAsNoLongerNeeded_
+getF1 0
+CallNative "SET_MODEL_AS_NO_LONGER_NEEDED" 1 0
+Jump @EndSpawnVehicle_
+:ErrorVehiclesOnly_
+
+Jump @EndSpawnVehicle_
+:SpawnVehicleError_
+
+:EndSpawnVehicle_
+Return 1 0
+
+:RequestModel_
+Function 1 2 0
+getF1 0
+CallNative "REQUEST_MODEL" 1 0
+:HasModelLoadedCheck_
+getF1 0
+CallNative "HAS_MODEL_LOADED" 1 1
+Not
+JumpFalse @EndHasModelLoadedCheck_
+push_0
+CallNative "WAIT" 1 0
+Jump @HasModelLoadedCheck_
+:EndHasModelLoadedCheck_
+Return 1 0
+
+:PrintText_
+Function 1 3 0
+PushString "STRING"
+CallNative "UNK_574EE85C" 1 0
+getF1 0
+CallNative "UNK_27A244D8" 1 0
+Push_0
+Push_1
+CallNative "UNK_08F7AF78" 2 1 
+Drop
+Return 1 0
